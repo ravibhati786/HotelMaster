@@ -1,0 +1,606 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <link href="booknow.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous' />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        .row {
+            margin: 0px;
+        }
+
+        #myVideo {
+            position: absolute;
+            z-index: -1;
+            min-width: 100%;
+            min-height: 100%;
+            margin-left: -15px;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            border: none;
+            border-bottom-color: none;
+        }
+
+        .input-group {
+            margin-top: 20px;
+        }
+
+        .input-group-addon {
+            background: #fff;
+            border: none;
+        }
+
+        /*.form-control {
+            border: none;
+            box-shadow: none;
+            border-radius: 0px;
+        }*/
+
+        .textboxes {
+            border: none;
+            border-bottom: 1px solid black;
+            box-shadow: none;
+            margin-top: 10px;
+        }
+
+            .textboxes:focus {
+                border-bottom: 1px solid #00cc99;
+                outline: none;
+                box-shadow: none;
+            }
+
+        .btn1 {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(to right,#4db8ff,#005c99);
+            border-radius: 3px;
+            border: none;
+            margin-left: 10px;
+            outline: none !important;
+            width: 680px;
+            height: 35px;
+        }
+
+            .btn1:hover {
+                background: linear-gradient(to right,#44db8ff,#115d99);
+            }
+
+        .errormsg {
+            color: red;
+        }
+
+        #navsignup {
+            font-size: 18px;
+        }
+
+        #navlogin {
+            font-size: 18px;
+        }
+
+        .signinbtn {
+            color: #000;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .dropdown-signin {
+            position: relative;
+            display: inline-block;
+            margin: 12px 0px 0px 0px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: verdana;
+        }
+
+        .dropdown-signin-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin: 10px 0px 0px 10px;
+        }
+
+            .dropdown-signin-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 16px;
+            }
+
+                .dropdown-signin-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+        .dropdown-signin:hover .dropdown-signin-content {
+            display: block;
+        }
+
+        .dropdown-signin:hover .signinbtn {
+            background-color:;
+            text-decoration: none;
+        }
+        #lblAccount{
+            text-overflow:ellipsis;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            
+        });
+        function loginSuccess() {
+            $("#myModal2").hide();
+            $("#loginLI").hide();
+            $("#divAccount").show();
+        }
+
+    </script>
+    <script>
+
+        function openModal() {
+            $('#myModal2').modal({ show: true });
+        }
+        
+        function name() {
+
+            var name = document.getElementById("txtname").value;
+            if (name == "") {
+                document.getElementById("nameerror").innerHTML = "Name is Empty";
+            }
+            else if (!isNaN(name)) {
+                document.getElementById("nameerror").innerHTML = "Name is invalid";
+            }
+            else {
+                document.getElementById("nameerror").innerHTML = "";
+                return true;
+            }
+        }
+        function email() {
+
+            var email = document.getElementById("txtemail").value;
+            var atposition = email.indexOf("@");
+            var dotposition = email.dotposition;
+            if (email == "") {
+                document.getElementById("emailerror").innerHTML = "email is Empty";
+            }
+            else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= email.length) {
+                document.getElementById("emailerror").innerHTML = "email is not correct";
+            }
+            else {
+                document.getElementById("emailerror").innerHTML = "";
+                return true;
+            }
+
+        }
+        function password() {
+            var password = document.getElementById("password").value;
+            if (password == "") {
+                document.getElementById("passerror").innerHTML = "password is Empty";
+            }
+            else {
+                document.getElementById("passerror").innerHTML = "";
+                return true;
+            }
+        }
+        function conformpassword() {
+            var password = document.getElementById("password").value;
+            var confpass = document.getElementById("passwordconfirm").value;
+            if (confpass == "") {
+                document.getElementById("confpasserror").innerHTML = "confirm password is Empty";
+            }
+            else if (password != confpass) {
+                document.getElementById("confpasserror").innerHTML = " password not match";
+            }
+            else {
+                document.getElementById("confpasserror").innerHTML = "";
+                return true;
+            }
+        }
+
+        function number() {
+            var number = document.getElementById("txtnumber").value;
+            if (number == "") {
+                document.getElementById("numbererror").innerHTML = " number is empty";
+            }
+            else if (number.length != 10) {
+                document.getElementById("numbererror").innerHTML = " number is wrong";
+            }
+            else if (isNaN(number)) {
+                document.getElementById("numbererror").innerHTML = " enter number value only";
+
+            }
+            else {
+                document.getElementById("numbererror").innerHTML = "";
+                return true;
+            }
+        }
+        function validate() {
+
+            name();
+            email();
+            number();
+            password();
+            conformpassword();
+            if (name() && email() && number() && password() && conformpassword()) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function loginemail() {
+
+            var loginemail = document.getElementById("loginemail").value;
+            var atposition = loginemail.indexOf("@");
+            var dotposition = loginemail.dotposition;
+            if (loginemail == "") {
+                document.getElementById("loginemailerror").innerHTML = "email is Empty";
+
+            }
+            else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= loginemail.length) {
+                document.getElementById("loginemailerror").innerHTML = "email is not correct";
+            }
+            else {
+                document.getElementById("loginemailerror").innerHTML = "";
+                return true;
+            }
+
+        }
+        function loginpassword() {
+            var loginpassword = document.getElementById("loginpass").value;
+            if (loginpassword == "") {
+                document.getElementById("loginpasserror").innerHTML = "password is Empty";
+            }
+            else {
+                document.getElementById("loginpasserror").innerHTML = "";
+                return true;
+            }
+        }
+        function loginvalidate() {
+            loginemail();
+            loginpassword();
+
+            if (loginemail() && loginpassword()) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="main-wrapper">
+            <div class="row header nav navbar-fixed-top">
+                <div class="col-sm-3 logo"><span class="logo-name">The Unique Hotel</span></div>
+                <div class="col-sm-9 nav-bar">
+
+                    <nav class="navbar ">
+
+                        <ul class="nav navbar-nav" style="margin-left: -40px;">
+                            <li class="active"><a href="index.aspx">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="Rooms.aspx">Room</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Service
+        <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Services.aspx">Dining</a></li>
+                                    <li><a href="Services.aspx">Guest Room</a></li>
+                                    <li><a href="Services.aspx">Meeting</a></li>
+                                    <li><a href="Services.aspx">Event</a></li>
+                                    <li><a href="Services.aspx">Spa & Gym</a></li>
+                                    <li><a href="Services.aspx">Pool</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="gallery.aspx">Gallery</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li id="loginLI" runat="server"><a href="#" data-toggle="modal" data-target="#myModal2">Login</a></li>
+                            <li>
+                                <div class="dropdown-signin" id="divAccount" runat="server">
+                                    <a href="#" class="signinbtn">
+                                        Hi <asp:Label ID="lblAccount" runat="server" Text="Label"></asp:Label>
+                                        </a>
+                                    <div class="dropdown-signin-content">
+                                        <asp:LinkButton ID="lnkbtnBookings" runat="server">My Bookings</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnFeedback" runat="server">My Feedback</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LogOut</asp:LinkButton>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="margin-left: 50px">
+                                <div class="btnbook">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Book Now</button></div>
+                            </li>
+                        </ul>
+
+
+                    </nav>
+
+
+                </div>
+
+            </div>
+            <div style="margin-top: 150px">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="footer" style="margin-bottom: 0px; padding-top: 1em">
+                <div class="row footer-header" style="margin-left: 80px; margin-right: 80px;">
+                    <div class="col-sm-3">
+                        <h3 style="margin-left: 38px;">The Unique Hotel</h3>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3 style="margin-left: 110px;">Company</h3>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3 style="margin-left: 38px; font-family: ">Services</h3>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Sign up for NewLetter</h3>
+                    </div>
+
+                </div>
+                <div class="row" style="margin-left: 80px; margin-right: 80px;">
+
+                    <div class="col-sm-3 col1">
+                        <ul>
+                            <li><i style="font-size: 16px; padding: 0px 15px;" class="fa">&#xf10b;</i>(+91) 998 3044 487</li>
+                            <li><i style="font-size: 16px; padding: 0px 10px;" class="material-icons">&#xe0be;</i>supporttheuniquehotel@gmail.com </li>
+                            <li><i style="font-size: 16px; padding: 0px 10px;" class="material-icons">&#xe0c8;</i>Gajanan maharaj temple </li>
+                        </ul>
+                        <ul>
+                            <li style="margin-left: 0px;">
+                                <div class="facebook"><a href="#"><i style="margin-top: 10px;" class="fa fa-facebook"></i></a></div>
+                            </li>
+                            <li>
+                                <div class="facebook"><a href="#"><i style="margin-top: 10px" class="fa fa-twitter"></i></a></div>
+                            </li>
+                            <li>
+                                <div class="facebook"><a href="#"><i style="margin-top: 10px" class="fa fa-google-plus"></i></a></div>
+                            </li>
+                            <li>
+                                <div class="facebook"><a href="#"><i style="margin-top: 10px" class="fa fa-instagram"></i></a></div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3 col2">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Home</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>About Us</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Room</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Services</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Gallery</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col3">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Dining</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Guest Room</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Meeting</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Events</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Spa</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Gym</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Pool</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col4">
+
+                        <div class="input-group col44">
+                            <asp:TextBox ID="TextBox1" class="form-control" runat="server" placeholder="Your Email" Style=""></asp:TextBox>
+                            <span class="input-group-addon" style="background: #fff; color: black;"><a href="#" style="color: black;"><i class="glyphicon glyphicon-send"></i></a></span>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row footer-bottom" style="margin-left: 80px; margin-right: 80px;">
+
+                    <div class="col-sm-7 copyright-text">
+                        &copy; 2019 The Unique Hotel
+                    </div>
+                    <div class="col-sm-5">
+                        <ul class="copyright-menu">
+                            <li><a href="#">Term &amp; Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <!-- Modal -->
+
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 style="text-align: center;">Book Your Room</h3>
+
+
+                            <div class="row row1">
+                                <div class="col-md-3">
+                                    <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
+                                    <asp:TextBox ID="chkin" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:Label ID="Label2" runat="server" Text="Check Out"></asp:Label>
+                                    <asp:TextBox ID="chkout" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="col-md-3">
+                                    <asp:Label ID="Label4" runat="server" Text="Adults"></asp:Label>
+                                    <span><i class="fas fa-user"></i></span>
+                                    <div class="dropdown">
+                                        <asp:DropDownList ID="ddladults" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;">
+
+                                            <asp:ListItem Value="0">----select----</asp:ListItem>
+                                            <asp:ListItem>1</asp:ListItem>
+                                            <asp:ListItem>2</asp:ListItem>
+                                            <asp:ListItem>3</asp:ListItem>
+                                            <asp:ListItem>4</asp:ListItem>
+
+                                        </asp:DropDownList>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-3">
+                                    <asp:Label ID="Label3" runat="server" Text="Children"></asp:Label>
+                                    <span><i class="fas fa-user"></i></span>
+                                    <div class="dropdown">
+                                        <asp:DropDownList ID="ddlchildren" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;">
+                                            <asp:ListItem Value="0">----select----</asp:ListItem>
+                                            <asp:ListItem>1</asp:ListItem>
+                                            <asp:ListItem>2</asp:ListItem>
+                                            <asp:ListItem>3</asp:ListItem>
+                                            <asp:ListItem>4</asp:ListItem>
+
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row2">
+                                <div class="col-md-6">
+                                    <span style="font-style: oblique">Check Availebility</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <asp:Button ID="Search" runat="server" Text="Search" CssClass="searchbtn" PostBackUrl="~/Rooms.aspx" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Trigger the modal with a button -->
+            <!-- Modal -->
+            <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content" style="width: 120%">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <ul class="nav nav-tabs" style="border-bottom: none;">
+                                <li class="active" id="navlogin" runat="server"><a data-toggle="tab" href="#menu1">Login</a></li>
+                                <li id="navsignup" runat="server"><a data-toggle="tab" href="#home">Sign Up</a></li>
+                            </ul>
+
+                            <div class="tab-content mod1">
+                                <div id="menu1" class="tab-pane fade in active" runat="server">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">LOGIN</h3>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                                            <asp:TextBox ID="loginemail" runat="server" placeholder="Enter Your Email or Number" CssClass="form-control  textboxes"></asp:TextBox>
+                                            <div id="loginemailerror" class="errormsg"></div>
+                                        </div>
+                                        <div class="input-group" style="margin-bottom: 20px;">
+                                            <span class="input-group-addon"><i class="fas fa-key"></i></span>
+                                            <asp:TextBox ID="loginpass" runat="server" placeholder="Enter Your password" CssClass="form-control  textboxes" TextMode="Password"></asp:TextBox>
+                                            <div id="loginpasserror" class="errormsg"></div>
+                                        </div>
+                                        <asp:Button ID="btnlogin" runat="server" Text="Log In" CssClass="btn1" OnClientClick="return loginvalidate()" OnClick="btnlogin_Click" />
+                                        <span id="spnwrongdetails" class="errormsg" runat="server"> Wrong Email or Password. </span>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <a href="#">Forget Password ?</a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a href="#" style="margin-left: 130px;">Reset Password</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="home" class="tab-pane fade" runat="server">
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 280px;">SIGN UP</h3>
+
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            <asp:TextBox ID="txtname" runat="server" placeholder="Enter Your Name" CssClass="form-control textboxes"></asp:TextBox>
+                                            <div id="nameerror" class="errormsg"></div>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-send"></i></span>
+                                            <asp:TextBox ID="txtemail" runat="server" placeholder="Enter Your Email" CssClass="form-control textboxes"></asp:TextBox>
+                                            <div id="emailerror" class="errormsg"></div>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fas fa-mobile"></i></span>
+                                            <asp:TextBox ID="txtnumber" runat="server" placeholder="Enter Your Number" CssClass="form-control  textboxes"></asp:TextBox>
+                                            <div id="numbererror" class="errormsg"></div>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fas fa-key"></i></span>
+                                            <asp:TextBox ID="password" runat="server" placeholder="Enter Your password" CssClass="form-control  textboxes" TextMode="Password"></asp:TextBox>
+                                            <div id="passerror" class="errormsg"></div>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fas fa-key"></i></span>
+                                            <asp:TextBox ID="passwordconfirm" runat="server" placeholder="Confirm Your password" CssClass="form-control  textboxes" TextMode="Password"></asp:TextBox>
+                                            <div id="confpasserror" class="errormsg"></div>
+                                        </div>
+                                        <div class="input-group">
+                                            <asp:Button ID="btnsignup" runat="server" Text="Sign Up" CssClass="btn1" OnClick="btnsignup_Click" OnClientClick="return validate()" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
