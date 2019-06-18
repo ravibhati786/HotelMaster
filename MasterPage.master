@@ -460,7 +460,7 @@
                             <h3 style="text-align: center;">Book Your Room</h3>
 
 
-                            <div class="row row1">
+                            <div class="row row1" style="margin-top:40px;">
                                 <div class="col-md-3">
                                     <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
                                     <asp:TextBox ID="chkin" runat="server" CssClass="form-control"></asp:TextBox>
@@ -502,12 +502,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row row2">
-                                <div class="col-md-6">
+                            <div class="row row2"style="margin-top:40px;">
+                                <div class="col-md-6" style="margin-top:10px;">
                                     <span style="font-style: oblique">Check Availebility</span>
                                 </div>
                                 <div class="col-md-6">
-                                    <asp:Button ID="Search" runat="server" Text="Search" CssClass="searchbtn" PostBackUrl="~/Rooms.aspx" />
+                                    <asp:Button ID="Search" runat="server" Text="Search" CssClass="searchbtn" PostBackUrl="~/AvailabilityRoom.aspx" />
                                 </div>
                             </div>
                         </div>
