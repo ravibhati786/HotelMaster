@@ -6,19 +6,19 @@
     <div class="container">
         <div class="row" style="margin-top:50px;margin-bottom:20px;box-shadow:1px 1px 6px silver;padding:20px">
             <div class="col-lg-5">
-                <asp:Label ID="Label6" runat="server" Text="Label">Availability : </asp:Label>
+                <asp:Label ID="Label6" runat="server"  style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;">Availability : </asp:Label>
 
             </div>
             <div class="col-lg-2">
-                <asp:Label ID="lblablchkdate" runat="server" Text="Label">15-5-2018</asp:Label>
+               <i style="font-size:20px" class="fa">&#xf073;</i> <asp:Label ID="lblablchkdate" style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;" runat="server" >15-5-2018</asp:Label>
 
             </div>
             <div class="col-lg-1">
-                <asp:Label ID="Label8" runat="server" Text="Label">To</asp:Label>
+                <asp:Label ID="Label8" runat="server" style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;">To</asp:Label>
 
             </div>
             <div class="col-lg-4">
-                <asp:Label ID="lblabloutdate" runat="server" Text="Label">117-5-2018</asp:Label>
+              <i style="font-size:20px" class="fa">&#xf073;</i>  <asp:Label ID="lblabloutdate" style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;" runat="server" > 17-5-2018</asp:Label>
 
             </div>
 

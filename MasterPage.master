@@ -327,7 +327,7 @@
                                 </ul>
                             </li>
                             <li><a href="gallery.aspx">Gallery</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="contact.aspx">Contact</a></li>
                             <li id="loginLI" runat="server"><a href="#" data-toggle="modal" data-target="#myModal2">Login</a></li>
                             <li>
                                 <div class="dropdown-signin" id="divAccount" runat="server">
@@ -354,7 +354,7 @@
                 </div>
 
             </div>
-            <div style="margin-top: 140px">
+            <div style="margin-top: 150px">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
