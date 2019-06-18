@@ -73,7 +73,7 @@ span.glyphicon.glyphicon-user,span.glyphicon.glyphicon-camera,span.glyphicon.gly
     -webkit-transition: 0.5s ease;
     color: #fff;
 }
-span.glyphicon.glyphicon-user,span.glyphicon.glyphicon-gift:hover {
+span.glyphicon.glyphicon-user,span.glyphicon.glyphicon-gift:hover, span.glyphicon.glyphicon-signal:hover {
     background-color: #222;
     background-image: -moz-linear-gradient(top,#222,#222);
     background-image: -webkit-gradient(linear,0 0,0 100%,from(#222),to(#222));
