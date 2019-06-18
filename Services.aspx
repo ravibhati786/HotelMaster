@@ -54,6 +54,29 @@
 				</div>
 			  <div class="clearfix"> </div>
 			</div>
+            <div class="services3">
+				<div class="col-md-6 services-grid">
+					<div class="col-md-5 serv-img">
+						<img src="image/p10.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="col-md-7 serv-text">
+						<h4> Events </h4>
+						<p> We also arrange events in our hotel, as per customer requirements. We have some large hall and garden for the events like, Reception, Birthday, Anniversary, Engagement and Party etc.</p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+				<div class="col-md-6 services-grid">
+					<div class="col-md-5 serv-img">
+						<img src="image/p11.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="col-md-7 serv-text">
+						<h4> Meetings </h4>
+						 <p> We also arrange meetings for business professionals and different types of committees within hall. </p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			  <div class="clearfix"> </div>
+			</div>
 		</div>
 	</div>
 </div>

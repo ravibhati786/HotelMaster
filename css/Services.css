@@ -164,7 +164,7 @@ span.glyphicon.glyphicon-gift:hover{
     color: #222;
 	text-align:center;
 }
-.services1 {
+.services1, .services2, .services3 {
     margin: 3em 0;
 }
 .serv-text h4 {
