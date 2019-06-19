@@ -473,14 +473,16 @@
                                     <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
                                     <asp:TextBox ID="chkin" runat="server" CssClass="form-control"></asp:TextBox>
                                     <script>
-                                        $('#chkin').datepicker({ uiLibrary: 'bootstrap' });
+                                        var date = new Date();
+                                        var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                                        $('#chkin').datepicker({ uiLibrary: 'bootstrap', minDate:today });
                                     </script>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:Label ID="Label2" runat="server" Text="Check Out"></asp:Label>
                                     <asp:TextBox ID="chkout" runat="server" CssClass="form-control"></asp:TextBox>
                                     <script>
-                                        $('#chkout').datepicker({ uiLibrary: 'bootstrap' });
+                                        $('#chkout').datepicker({ uiLibrary: 'bootstrap', minDate:new Date() });
                                     </script>
                                 </div>
                                 <div class="col-md-3">
