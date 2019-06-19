@@ -35,7 +35,7 @@
       <input id="ablchkin" class="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;" />
     <script>
         $('#ablchkin').datepicker({
-           
+           minDate: today
         });
     </script>
 
@@ -49,9 +49,14 @@
                 <input id="ablchkout" class="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;"/>
     <script>
         $('#ablchkout').datepicker({
-          
+            uiLibrary: 'bootstrap', minDate: new Date()
         });
     </script>
+                <script>
+                                        var date = new Date();
+                                        var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                                        $('#ablchkin').datepicker({ uiLibrary: 'bootstrap', minDate: today });
+                                    </script>
             </div>
             <div class="col-lg-2"></div>
         </div>

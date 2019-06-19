@@ -471,7 +471,9 @@
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
-                    <div class="modal-content">
+                    <div class="modal-content" style="
+    width: 110%;
+">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h3 style="text-align: center;">Book Your Room</h3>
@@ -481,10 +483,10 @@
                                 <div class="col-md-3">
                                     <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
                                     <asp:TextBox ID="chkin" runat="server" CssClass="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;"></asp:TextBox>
-                                    <scr
+                                    <script>
                                         $(document).ready(function () {
                                             $('#chkin').datepicker({
-                                                minDate: 0
+                                             
                                             });
                                         });
                                         
@@ -497,22 +499,21 @@
                                     
                                          <script>
                                         $('#chkout').datepicker({
-                                         
+                                            uiLibrary: 'bootstrap', minDate: new Date()
                                          });
                                    </script>
-=======
+                                    <script>
                                         var date = new Date();
                                         var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
                                         $('#chkin').datepicker({ uiLibrary: 'bootstrap', minDate:today });
                                     </script>
-                                </div>
+                                <%--</div>
                                 <div class="col-md-3">
-                                    <asp:Label ID="Label2" runat="server" Text="Check Out"></asp:Label>
+                                    <asp:Label ID="Label22" runat="server" Text="Check Out"></asp:Label>
                                     <asp:TextBox ID="chkout" runat="server" CssClass="form-control"></asp:TextBox>
                                     <script>
-                                        $('#chkout').datepicker({ uiLibrary: 'bootstrap', minDate:new Date() });
-                                    </script>
->>>>>>> b43d8c4b2a4b0b8e9580c89c036303c82b74ce3c
+                                        $('#chkout').datepicker({  });
+                                    </script>--%>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:Label ID="Label4" runat="server" Text="Adults"></asp:Label>
