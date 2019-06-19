@@ -151,13 +151,14 @@
             background-color:;
             text-decoration: none;
         }
-        #lblAccount{
-            text-overflow:ellipsis;
+
+        #lblAccount {
+            text-overflow: ellipsis;
         }
     </style>
     <script>
         $(document).ready(function () {
-            
+
         });
         function loginSuccess() {
             $("#myModal2").hide();
@@ -171,7 +172,7 @@
         function openModal() {
             $('#myModal2').modal({ show: true });
         }
-        
+
         function name() {
 
             var name = document.getElementById("txtname").value;
@@ -337,9 +338,9 @@
                             <li id="loginLI" runat="server"><a href="#" data-toggle="modal" data-target="#myModal2">Login</a></li>
                             <li>
                                 <div class="dropdown-signin" id="divAccount" runat="server">
-                                    <a href="#" class="signinbtn">
-                                        Hi <asp:Label ID="lblAccount" runat="server" Text="Label"></asp:Label>
-                                        </a>
+                                    <a href="#" class="signinbtn">Hi
+                                        <asp:Label ID="lblAccount" runat="server" Text="Label"></asp:Label>
+                                    </a>
                                     <div class="dropdown-signin-content">
                                         <asp:LinkButton ID="lnkbtnBookings" runat="server">My Bookings</asp:LinkButton>
                                         <asp:LinkButton ID="lnkbtnFeedback" runat="server">My Feedback</asp:LinkButton>
@@ -349,7 +350,8 @@
                             </li>
                             <li style="margin-left: 50px">
                                 <div class="btnbook">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Book Now</button></div>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Book Now</button>
+                                </div>
                             </li>
                         </ul>
 
@@ -466,41 +468,33 @@
                             <h3 style="text-align: center;">Book Your Room</h3>
 
 
-                            <div class="row row1" style="margin-top:40px;">
+                            <div class="row row1" style="margin-top: 40px;">
                                 <div class="col-md-3">
                                     <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
                                     <asp:TextBox ID="chkin" runat="server" CssClass="form-control"></asp:TextBox>
                                     <script>
-                                        $('#chkin').datepicker({
-            uiLibrary: 'bootstrap'
-        });
-    </script>
+                                        $('#chkin').datepicker({ uiLibrary: 'bootstrap' });
+                                    </script>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:Label ID="Label2" runat="server" Text="Check Out"></asp:Label>
                                     <asp:TextBox ID="chkout" runat="server" CssClass="form-control"></asp:TextBox>
-                                                                    <script>
-                                        $('#chkout').datepicker({
-            uiLibrary: 'bootstrap'
-        });
-    </script>
+                                    <script>
+                                        $('#chkout').datepicker({ uiLibrary: 'bootstrap' });
+                                    </script>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:Label ID="Label4" runat="server" Text="Adults"></asp:Label>
                                     <span><i class="fas fa-user"></i></span>
                                     <div class="dropdown">
                                         <asp:DropDownList ID="ddladults" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;">
-
                                             <asp:ListItem Value="0">----select----</asp:ListItem>
                                             <asp:ListItem>1</asp:ListItem>
                                             <asp:ListItem>2</asp:ListItem>
                                             <asp:ListItem>3</asp:ListItem>
                                             <asp:ListItem>4</asp:ListItem>
-
                                         </asp:DropDownList>
-
                                     </div>
-
                                 </div>
 
                                 <div class="col-md-3">
@@ -518,8 +512,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row row2"style="margin-top:40px;">
-                                <div class="col-md-6" style="margin-top:10px;">
+                            <div class="row row2" style="margin-top: 40px;">
+                                <div class="col-md-6" style="margin-top: 10px;">
                                     <span style="font-style: oblique">Check Availebility</span>
                                 </div>
                                 <div class="col-md-6">
@@ -563,7 +557,7 @@
                                             <div id="loginpasserror" class="errormsg"></div>
                                         </div>
                                         <asp:Button ID="btnlogin" runat="server" Text="Log In" CssClass="btn1" OnClientClick="return loginvalidate()" OnClick="btnlogin_Click" />
-                                        <span id="spnwrongdetails" class="errormsg" runat="server"> Wrong Email or Password. </span>
+                                        <span id="spnwrongdetails" class="errormsg" runat="server">Wrong Email or Password. </span>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <a href="#">Forget Password ?</a>
