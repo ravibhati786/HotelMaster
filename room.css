@@ -30,6 +30,8 @@
     height:40px;
     font-size:14px;
     padding:10px;
+    color:#000;
+    text-decoration:none;
 }
 
 .input-group-addon:hover ,.bookme:hover{
