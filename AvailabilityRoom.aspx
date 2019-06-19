@@ -69,8 +69,8 @@
                                     <div class="media-body">
                                         <h4 class="media-heading headofMedia">
                                             <asp:Label ID="Label1" runat="server" Text="Single Room"></asp:Label></h4>
-                                        <asp:Label ID="Label2" runat="server" CssClass="txt-col" Text="2 Guest "></asp:Label><br />
-                                        <asp:Label ID="Label3" runat="server" CssClass="txt-col" Text="1 Rooms"></asp:Label><br />
+                                        <asp:Label ID="Label2" runat="server" CssClass="txt-col" Text="2 Adults "></asp:Label><br />
+                                        <asp:Label ID="Label3" runat="server" CssClass="txt-col" Text="1 Children"></asp:Label><br />
                                         <asp:Label ID="Label7" runat="server" CssClass="txt-col" Text="1 Nights"></asp:Label>
                                     </div>
                                 </div>
