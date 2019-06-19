@@ -38,18 +38,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3"></div>
+                            <div class="col-md-4"></div>
                             
-                            <div class="col-md-2">
-                                <div class="media-body" style="text-align: right">
+                            <div class="col-md-3">
+                                <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
                                         <asp:Label ID="Label4" runat="server" Text="Amt. 1287"></asp:Label></h5>
                                     <asp:Label ID="Label5" CssClass="txt-col " runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="LinkButton2" CssClass="txt-col" runat="server" Font-Underline="True">View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton2" CssClass="txt-col" runat="server" Font-Underline="True" PostBackUrl="~/roomdetail.aspx" >View Details</asp:LinkButton><asp:LinkButton ID="LinkButton1" CssClass="txt-col" runat="server" style="margin-left:10px;"  Font-Underline="True" PostBackUrl="~/mybooking.aspx" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-">
                                 
                             </div>
                         </div>
