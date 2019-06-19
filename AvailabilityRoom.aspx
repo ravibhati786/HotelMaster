@@ -29,7 +29,22 @@
         <div class="row" style="margin-top:50px;margin-bottom:20px;box-shadow:1px 1px 6px silver;padding:20px">
             <div class="col-lg-5">
                 <asp:Label ID="Label6" runat="server"  style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;">Availability : </asp:Label>
-
+                <asp:Label ID="Label9" runat="server"  Text="Adults " style="margin-left:30px"></asp:Label>
+                <asp:DropDownList ID="ddladults" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;height:30px;margin-left:5px">
+                                            
+                                            <asp:ListItem>1</asp:ListItem>
+                                            <asp:ListItem>2</asp:ListItem>
+                                            <asp:ListItem>3</asp:ListItem>
+                                            <asp:ListItem>4</asp:ListItem>
+                                        </asp:DropDownList>
+                 <asp:Label ID="Label10" runat="server"  Text="Children" style="margin-left:20px"></asp:Label>
+                <asp:DropDownList ID="DropDownList1" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;height:30px;margin-left:5px">
+                                            
+                                            <asp:ListItem>1</asp:ListItem>
+                                            <asp:ListItem>2</asp:ListItem>
+                                            <asp:ListItem>3</asp:ListItem>
+                                            <asp:ListItem>4</asp:ListItem>
+                                        </asp:DropDownList>
             </div>
             <div class="col-lg-2">
       <input id="ablchkin" class="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;" />
@@ -41,7 +56,7 @@
 
             </div>
             <div class="col-lg-1">
-                <asp:Label ID="Label8" runat="server" style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;">To</asp:Label>
+                <asp:Label ID="Label8" runat="server" style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;margin-left:20px">To</asp:Label>
 
             </div>
             <div class="col-lg-2">
@@ -69,9 +84,9 @@
                                     <div class="media-body">
                                         <h4 class="media-heading headofMedia">
                                             <asp:Label ID="Label1" runat="server" Text="Single Room"></asp:Label></h4>
-                                        <asp:Label ID="Label2" runat="server" CssClass="txt-col" Text="2 Adults "></asp:Label><br />
-                                        <asp:Label ID="Label3" runat="server" CssClass="txt-col" Text="1 Children"></asp:Label><br />
-                                        <asp:Label ID="Label7" runat="server" CssClass="txt-col" Text="1 Nights"></asp:Label>
+                                        <asp:Label ID="lblavladults" runat="server"  Text="2"></asp:Label><asp:Label ID="Label2" runat="server"  Text="Adults" style="margin-left:5px"></asp:Label><br />
+                                         <asp:Label ID="lblavlchild" runat="server"  Text="1"></asp:Label><asp:Label ID="Label3" runat="server"  Text="Children" style="margin-left:5px"></asp:Label><br />
+                                        <asp:Label ID="Label7" runat="server" Text="1 Nights"></asp:Label>
                                     </div>
                                 </div>
                             </div>
