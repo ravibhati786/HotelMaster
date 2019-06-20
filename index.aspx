@@ -8,8 +8,8 @@
     <div class="row slider" style="">
             <div class="col-sm-12">
                   <video autoplay muted loop id="myVideo">
-  <source src="https://www.vesperhotel.com/wp-content/themes/vesperhotel/video/winter/winter_vp9.webm" type="video/mp4">
-</video>
+                    <source src="https://www.vesperhotel.com/wp-content/themes/vesperhotel/video/winter/winter_vp9.webm" type="video/mp4">
+                  </video>
 
             </div>
         </div>
