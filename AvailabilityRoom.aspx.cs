@@ -52,5 +52,20 @@ public partial class _Default : System.Web.UI.Page
 
 
     }
-    
+
+
+    protected void lnkbtnSingleDetails_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("roomdetail.aspx?CheckIn="+ablchkin.Text+"&CheckOut="+ablchkout.Text+"&Adults="+ddladults.SelectedValue+"&Childs="+ddlchilds.SelectedValue+"&Type="+"SINGLE"+"&Amount="+lblSingleAmt.Text);
+    }
+
+    protected void lnkbtnDoubleDetails_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("roomdetail.aspx?CheckIn=" + ablchkin.Text + "&CheckOut=" + ablchkout.Text + "&Adults=" + ddladults.SelectedValue + "&Childs=" + ddlchilds.SelectedValue + "&Type=" + "DOUBLE" + "&Amount=" + lblDoubleAmt.Text);
+    }
+
+    protected void lnkbtnLuxuryDetails_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("roomdetail.aspx?CheckIn=" + ablchkin.Text + "&CheckOut=" + ablchkout.Text + "&Adults=" + ddladults.SelectedValue + "&Childs=" + ddlchilds.SelectedValue + "&Type=" + "LUXURY" + "&Amount=" + lblLuxuryAmt.Text);
+    }
 }

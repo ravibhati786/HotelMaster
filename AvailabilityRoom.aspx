@@ -63,7 +63,7 @@
                                         &#8377; <asp:Label ID="lblSingleAmt" runat="server" Text="1287"></asp:Label></h5>
                                     <asp:Label ID="Label5" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="lnkbtnSingleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" >View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnSingleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnSingleDetails_Click" >View Details</asp:LinkButton>
                                     <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                         &#8377; <asp:Label ID="lblDoubleAmt" runat="server" Text="1287"></asp:Label></h5>
                                     <asp:Label ID="Label18" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="lnkbtnDoubleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" >View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnDoubleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnDoubleDetails_Click" >View Details</asp:LinkButton>
                                     <asp:LinkButton ID="lnkbtnDoubleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                                         &#8377; <asp:Label ID="lblLuxuryAmt" runat="server" Text="1287"></asp:Label></h5>
                                     <asp:Label ID="Label26" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="lnkbtnLuxuryDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" >View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnLuxuryDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnLuxuryDetails_Click" >View Details</asp:LinkButton>
                                     <asp:LinkButton ID="lnkbtnLuxuryBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
