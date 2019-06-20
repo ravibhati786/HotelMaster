@@ -11,18 +11,18 @@
                 <asp:Label ID="Label9" runat="server"  Text="Adults " style="margin-left:30px"></asp:Label>
                 <asp:DropDownList ID="ddladults" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;height:30px;margin-left:5px">
                                             
-                                            <asp:ListItem>1</asp:ListItem>
-                                            <asp:ListItem>2</asp:ListItem>
-                                            <asp:ListItem>3</asp:ListItem>
-                                            <asp:ListItem>4</asp:ListItem>
+                                            <asp:ListItem Value="1">1</asp:ListItem>
+                                            <asp:ListItem Value="2">2</asp:ListItem>
+                                            <asp:ListItem Value="3">3</asp:ListItem>
+                                            <asp:ListItem Value="4">4</asp:ListItem>
                                         </asp:DropDownList>
                  <asp:Label ID="Label10" runat="server"  Text="Children" style="margin-left:20px"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;height:30px;margin-left:5px">
-                                            <asp:ListItem>0</asp:ListItem>
-                                            <asp:ListItem>1</asp:ListItem>
-                                            <asp:ListItem>2</asp:ListItem>
-                                            <asp:ListItem>3</asp:ListItem>
-                                            <asp:ListItem>4</asp:ListItem>
+                <asp:DropDownList ID="ddlchilds" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;height:30px;margin-left:5px">
+                                            <asp:ListItem Value="0">0</asp:ListItem>
+                                            <asp:ListItem Value="1">1</asp:ListItem>
+                                            <asp:ListItem Value="2">2</asp:ListItem>
+                                            <asp:ListItem Value="3">3</asp:ListItem>
+                                            <asp:ListItem Value="2">4</asp:ListItem>
                                         </asp:DropDownList>
             </div>
             <div class="col-lg-2">
@@ -40,7 +40,7 @@
             </div>
             <div class="col-lg-2"></div>
         </div>
-    <div class="row" style="margin-top:50px;box-shadow:1px 1px 6px silver;padding:20px">
+    <div id="divsingle" runat="server" class="row" style="margin-top:50px;box-shadow:1px 1px 6px silver;padding:20px">
                             <div class="col-md-5">
                                 <div class="media">
                                     <div class="media-left">
@@ -60,10 +60,11 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        <asp:Label ID="Label4" runat="server" Text="Amt. 1287"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblSingleAmt" runat="server" Text="1287"></asp:Label></h5>
                                     <asp:Label ID="Label5" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="LinkButton2" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" PostBackUrl="~/roomdetail.aspx" >View Details</asp:LinkButton><asp:LinkButton ID="LinkButton1" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" PostBackUrl="~/mybooking.aspx" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnSingleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" >View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">
@@ -71,7 +72,7 @@
                             </div>
                         </div>
 
-     <div class="row" style="margin-top:10px;box-shadow:1px 1px 6px silver;padding:20px">
+     <div id="divdouble" runat="server" class="row" style="margin-top:10px;box-shadow:1px 1px 6px silver;padding:20px">
                             <div class="col-md-5">
                                 <div class="media">
                                     <div class="media-left">
@@ -91,10 +92,11 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        <asp:Label ID="Label17" runat="server" Text="Amt. 1287"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblDoubleAmt" runat="server" Text="1287"></asp:Label></h5>
                                     <asp:Label ID="Label18" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="LinkButton3" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" PostBackUrl="~/roomdetail.aspx" >View Details</asp:LinkButton><asp:LinkButton ID="LinkButton4" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" PostBackUrl="~/mybooking.aspx" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnDoubleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" >View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnDoubleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">
@@ -102,7 +104,7 @@
                             </div>
                         </div>
 
-     <div class="row" style="margin-top:10px;margin-bottom:80px;box-shadow:1px 1px 6px silver;padding:20px">
+     <div id="divluxury" runat="server" class="row" style="margin-top:10px;margin-bottom:80px;box-shadow:1px 1px 6px silver;padding:20px">
                             <div class="col-md-5">
                                 <div class="media">
                                     <div class="media-left">
@@ -122,18 +124,16 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        <asp:Label ID="Label25" runat="server" Text="Amt. 1287"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblLuxuryAmt" runat="server" Text="1287"></asp:Label></h5>
                                     <asp:Label ID="Label26" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="LinkButton5" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" PostBackUrl="~/roomdetail.aspx" >View Details</asp:LinkButton><asp:LinkButton ID="LinkButton6" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" PostBackUrl="~/mybooking.aspx" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnLuxuryDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" >View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnLuxuryBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">
-                                
-                            </div>
-                        </div>
-
-
+                    </div>
+             </div>
         </div>
 </asp:Content>
 

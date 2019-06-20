@@ -15,9 +15,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="row">
         <div class="col-lg-8">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/image/r1.jpg" Height="550px" Width="1000px" /></div>
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/image/r1.jpg" width="100%"/></div>
         <div class="col-lg-4">
-            <div class="row" style="margin-top:40px;">
+            <div class="row" style="">
                                 <div class="col-md-6">
                                     <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
                                     <asp:TextBox ID="chkin" runat="server" CssClass="form-control" disabled></asp:TextBox>
@@ -27,7 +27,7 @@
                                     <asp:TextBox ID="chkout" runat="server" CssClass="form-control" disabled></asp:TextBox>
                                 </div>
                 </div>
-                <div class="row" style="margin-top:40px;">
+                <div class="row" style="margin-top:10px;">
 
                                 <div class="col-md-6">
                                     <asp:Label ID="Label4" runat="server" Text="Adults"></asp:Label>
@@ -44,7 +44,7 @@
                             </div>
             <div class="row" style="margin-left:20px;">
                          <h2 style="font-variant:small-caps;margin-top:40px">
-                             <asp:Label ID="Label5" runat="server" Text="Single Room"></asp:Label></h2>
+                             <asp:Label ID="Label5" runat="server" Text="Single "></asp:Label> Room</h2>
                          <div class="roomtext"> 
                          <h3>Facilities</h3>
                          <p><i class="fas fa-tv"></i>Television</p>
