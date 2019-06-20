@@ -146,4 +146,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Session.Clear();
         Response.Redirect("index.aspx");
     }
+
+    protected void Search_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("AvailabilityRoom.aspx?CheckIN=" + chkin.Text + "&CheckOUT=" + chkout.Text);
+    }
 }
