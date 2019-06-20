@@ -492,6 +492,7 @@
                                     <asp:TextBox ID="chkout" runat="server" CssClass="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;" autocomplete="off"></asp:TextBox>
                                     
                                          <script>
+                                             var checkout = new Date($('#chkin').text());
                                         $('#chkout').datepicker({
                                             uiLibrary: 'bootstrap', minDate: new Date(), format: 'dd/mm/yyyy'
                                          });
