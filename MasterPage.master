@@ -484,7 +484,7 @@
                                     <script>
                                         var date = new Date();
                                         var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-                                        $('#chkin').datepicker({ uiLibrary: 'bootstrap', minDate: today });
+                                        $('#chkin').datepicker({ uiLibrary: 'bootstrap', minDate: today, format:'dd/mm/yyyy' });
                                        </script>
                                 </div>
                                 <div class="col-md-3">
@@ -493,7 +493,7 @@
                                     
                                          <script>
                                         $('#chkout').datepicker({
-                                            uiLibrary: 'bootstrap', minDate: new Date()
+                                            uiLibrary: 'bootstrap', minDate: new Date(), format: 'dd/mm/yyyy'
                                          });
                                    </script>
                                 </div>
