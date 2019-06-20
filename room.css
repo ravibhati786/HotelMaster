@@ -34,7 +34,7 @@
     text-decoration:none;
 }
 
-.input-group-addon:hover ,.bookme:hover{
+.bookme:hover{
         text-decoration:none;
     color:green;
   
@@ -43,8 +43,4 @@
 .shadow {
     margin-top:50px;
         box-shadow:1px 1px 6px silver;
-}
-.input-group-addon{
-    background-color:white;
-    border:none;
 }

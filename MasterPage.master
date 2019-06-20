@@ -24,9 +24,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    <%--<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />--%>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 
     <style>
         .row {
@@ -48,13 +53,10 @@
 
         .input-group {
             margin-top: 0px;
+           
         }
 
-        .input-group-addon {
-            background: #fff;
-            border: none;
-        }
-
+        
         /*.form-control {
             border: none;
             box-shadow: none;
@@ -310,6 +312,37 @@
 
 
     </script>
+    <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $("#chkin").datepicker({
+                        dateFormat: "dd-M-yy",
+                        uiLibrary: 'bootstrap',
+                        minDate: 0,
+                        onSelect: function (date) {
+                            var date2 = $('#chkin').datepicker('getDate');
+                            date2.setDate(date2.getDate() + 1);
+                            $('#chkout').datepicker('setDate', date2);
+                            //sets minDate to dt1 date + 1
+                            $('#chkout').datepicker('option', 'minDate', date2);
+                        }
+                    });
+                    $('#chkout').datepicker({
+                        dateFormat: "dd-M-yy",
+                        
+                        onClose: function () {
+                            var dt1 = $('#chkin').datepicker('getDate');
+                            var dt2 = $('#chkout').datepicker('getDate');
+                            //check to prevent a user from entering a date below date of dt1
+                            if (dt2 <= dt1) {
+                                var minDate = $('#chkout').datepicker('option', 'minDate');
+                                $('#chkout').datepicker('setDate', minDate);
+                            }
+                        }
+                    });
+                });
+
+    </script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -469,9 +502,7 @@
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
-                    <div class="modal-content" style="
-    width: 110%;
-">
+                    <div class="modal-content" style="width: 110%;">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h3 style="text-align: center;">Book Your Room</h3>
@@ -480,23 +511,35 @@
                             <div class="row row1" style="margin-top: 40px;">
                                 <div class="col-md-3">
                                     <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
-                                    <asp:TextBox ID="chkin" runat="server" CssClass="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;" autocomplete="off"></asp:TextBox>
-                                    <script>
+                                    
+                                    <div class="input-group">
+                                           
+                                        <asp:TextBox ID="chkin" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" ></asp:TextBox>
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    
+                                    
+                                    <%--<script>
                                         var date = new Date();
                                         var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
                                         $('#chkin').datepicker({ uiLibrary: 'bootstrap', minDate: today, format:'dd/mm/yyyy' });
-                                       </script>
+                                       </script>--%>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:Label ID="Label2" runat="server" Text="Check Out"></asp:Label>
-                                    <asp:TextBox ID="chkout" runat="server" CssClass="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;" autocomplete="off"></asp:TextBox>
                                     
-                                         <script>
+                                    <div class="input-group">
+                                           
+                                        <asp:TextBox ID="chkout" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" ></asp:TextBox>
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+
+                                         <%--<script>
                                              var checkout = new Date($('#chkin').text());
                                         $('#chkout').datepicker({
                                             uiLibrary: 'bootstrap', minDate: new Date(), format: 'dd/mm/yyyy'
                                          });
-                                   </script>
+                                   </script>--%>
                                 </div>
                                 <div class="col-md-3">
                                     <asp:Label ID="Label4" runat="server" Text="Adults"></asp:Label>
@@ -559,26 +602,26 @@
                                 <div id="menu1" class="tab-pane fade in active" runat="server">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">LOGIN</h3>
+                                            <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin-left:280px;margin-bottom:20px;">LOGIN</h3>
                                         </div>
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                                            <span class="input-group-addon" style="background: #fff;border:none;"><i class="fas fa-user"></i></span>
                                             <asp:TextBox ID="loginemail" runat="server" placeholder="Enter Your Email or Number" CssClass="form-control  textboxes"></asp:TextBox>
                                             <div id="loginemailerror" class="errormsg"></div>
                                         </div>
-                                        <div class="input-group" style="margin-bottom: 20px;">
-                                            <span class="input-group-addon"><i class="fas fa-key"></i></span>
+                                        <div class="input-group" style="margin-bottom: 20px;margin-top:20px;">
+                                            <span class="input-group-addon" style="background: #fff;border:none;"><i class="fas fa-key"></i></span>
                                             <asp:TextBox ID="loginpass" runat="server" placeholder="Enter Your password" CssClass="form-control  textboxes" TextMode="Password"></asp:TextBox>
                                             <div id="loginpasserror" class="errormsg"></div>
                                         </div>
-                                        <asp:Button ID="btnlogin" runat="server" Text="Log In" CssClass="btn1" OnClientClick="return loginvalidate()" OnClick="btnlogin_Click" />
+                                        <asp:Button ID="btnlogin" runat="server" style="margin-top:20px" Text="Log In" CssClass="btn1" OnClientClick="return loginvalidate()" OnClick="btnlogin_Click" />
                                         <span id="spnwrongdetails" class="errormsg" runat="server">Wrong Email or Password. </span>
-                                        <div class="row">
+                                        <div class="row" style="margin-top:20px;">
                                             <div class="col-md-6">
-                                                <a href="#">Forget Password ?</a>
+                                                <a href="#" >Forget Password ?</a>
                                             </div>
                                             <div class="col-md-6">
-                                                <a href="#" style="margin-left: 130px;">Reset Password</a>
+                                                <a href="#" style="margin-left: 212px;">Reset Password</a>
                                             </div>
                                         </div>
                                     </div>
@@ -591,31 +634,31 @@
 
                                         </div>
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            <span class="input-group-addon" style="background: #fff;border:none;"><i class="fa fa-user"></i></span>
                                             <asp:TextBox ID="txtname" runat="server" placeholder="Enter Your Name" CssClass="form-control textboxes"></asp:TextBox>
                                             <div id="nameerror" class="errormsg"></div>
                                         </div>
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-send"></i></span>
+                                        <div class="input-group" style="margin-top:20px">
+                                            <span class="input-group-addon" style="background: #fff;border:none;"><i class="fa fa-send"></i></span>
                                             <asp:TextBox ID="txtemail" runat="server" placeholder="Enter Your Email" CssClass="form-control textboxes"></asp:TextBox>
                                             <div id="emailerror" class="errormsg"></div>
                                         </div>
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fas fa-mobile"></i></span>
+                                        <div class="input-group" style="margin-top:20px">
+                                            <span class="input-group-addon" style="background: #fff;border:none;"><i class="fas fa-mobile"></i></span>
                                             <asp:TextBox ID="txtnumber" runat="server" placeholder="Enter Your Number" CssClass="form-control  textboxes"></asp:TextBox>
                                             <div id="numbererror" class="errormsg"></div>
                                         </div>
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fas fa-key"></i></span>
+                                        <div class="input-group" style="margin-top:20px">
+                                            <span class="input-group-addon" style="background: #fff;border:none;"><i class="fas fa-key"></i></span>
                                             <asp:TextBox ID="password" runat="server" placeholder="Enter Your password" CssClass="form-control  textboxes" TextMode="Password"></asp:TextBox>
                                             <div id="passerror" class="errormsg"></div>
                                         </div>
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fas fa-key"></i></span>
+                                        <div class="input-group" style="margin-top:20px">
+                                            <span class="input-group-addon" style="background: #fff;border:none;"><i class="fas fa-key"></i></span>
                                             <asp:TextBox ID="passwordconfirm" runat="server" placeholder="Confirm Your password" CssClass="form-control  textboxes" TextMode="Password"></asp:TextBox>
                                             <div id="confpasserror" class="errormsg"></div>
                                         </div>
-                                        <div class="input-group">
+                                        <div class="input-group" style="margin-top:20px">
                                             <asp:Button ID="btnsignup" runat="server" Text="Sign Up" CssClass="btn1" OnClick="btnsignup_Click" OnClientClick="return validate()" />
                                         </div>
                                     </div>

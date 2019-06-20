@@ -1,87 +1,100 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<title></title>
-    <link rel="stylesheet" href="StyleSheet.css" />
-    <link href="booknow.css" rel="stylesheet" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous' />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $(".myCal").datepicker({
+                        dateFormat: "dd-M-yy",
+                        uiLibrary: 'bootstrap',
+                        minDate: 0,
+                        onSelect: function (date) {
+                            var date2 = $('.myCal').datepicker('getDate');
+                            date2.setDate(date2.getDate() + 1);
+                            $('.myCall').datepicker('setDate', date2);
+                            //sets minDate to dt1 date + 1
+                            $('.myCall').datepicker('option', 'minDate', date2);
+                        }
+                    });
+                    $('.myCall').datepicker({
+                        dateFormat: "dd-M-yy",
+                        
+                        onClose: function () {
+                            var dt1 = $('.myCal').datepicker('getDate');
+                            var dt2 = $('.myCall').datepicker('getDate');
+                            //check to prevent a user from entering a date below date of dt1
+                            if (dt2 <= dt1) {
+                                var minDate = $('#dt2').datepicker('option', 'minDate');
+                                $('.myCall').datepicker('setDate', minDate);
+                            }
+                        }
+                    });
+                });
+
+    </script>
+    <style>
+        .myCal:focus{
+            outline:none;
+            box-shadow:none
+        }
+    </style>
+
 
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-       
-<div class="row row1" style="margin-top:40px;">
-                                <div class="col-md-3">
-                                    <asp:Label ID="Label1" runat="server" Text="Check In"></asp:Label>
-                                    <asp:TextBox ID="chki" runat="server" CssClass="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;"></asp:TextBox>
-                                   <input ID="chkin" />
-                                     <script>
-                                        $('#chkin').datepicker({
-                                            uiLibrary: 'bootstrap'
-                                         });
-                                       </script>
-                                </div>
-                                <div class="col-md-3">
-                                    <asp:Label ID="Label2" runat="server" Text="Check Out"></asp:Label>
-                                    <asp:TextBox ID="chkout" runat="server" CssClass="form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;"></asp:TextBox>
-                                    
-                                         <script>
-                                        $('#chkout').datepicker({
-                                         
-                                         });
-                                   </script>
-                                </div>
-                                <div class="col-md-3">
-                                    <asp:Label ID="Label4" runat="server" Text="Adults"></asp:Label>
-                                    <span><i class="fas fa-user"></i></span>
-                                    <div class="dropdown">
-                                        <asp:DropDownList ID="ddladults" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;">
 
-                                            <asp:ListItem Value="0">----select----</asp:ListItem>
-                                            <asp:ListItem>1</asp:ListItem>
-                                            <asp:ListItem>2</asp:ListItem>
-                                            <asp:ListItem>3</asp:ListItem>
-                                            <asp:ListItem>4</asp:ListItem>
+   
+<div class="row" style="margin-top:50px;margin-bottom:20px;box-shadow:1px 1px 6px silver;padding:20px">
+            <div class="col-lg-5">
+               
+            </div>
+            <div class="col-lg-2">
+                
+                <div class="input-group">
+                                           
+                                        <asp:TextBox ID="ablchkin" runat="server" CssClass="myCal" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;" ></asp:TextBox>
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                    <%--<script type="text/javascript">
+                        var date = new Date();
+                        var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                        $('.myCal').datepicker({
+                            uiLibrary: 'bootstrap', minDate: today, format: 'dd/mm/yyyy'
 
-                                        </asp:DropDownList>
+                        
 
-                                    </div>
+                        });
 
-                                </div>
+    </script>--%>
+ 
+            </div>
+            <div class="col-lg-1">
+                <asp:Label ID="Label8" runat="server" style="font-family: 'Raleway', sans-serif; font-size: 15px;font-weight: 500; line-height: 1.86;margin-left:20px">To</asp:Label>
 
-                                <div class="col-md-3">
-                                    <asp:Label ID="Label3" runat="server" Text="Children"></asp:Label>
-                                    <span><i class="fas fa-user"></i></span>
-                                    <div class="dropdown">
-                                        <asp:DropDownList ID="ddlchildren" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;">
-                                            <asp:ListItem Value="0">----select----</asp:ListItem>
-                                            <asp:ListItem>1</asp:ListItem>
-                                            <asp:ListItem>2</asp:ListItem>
-                                            <asp:ListItem>3</asp:ListItem>
-                                            <asp:ListItem>4</asp:ListItem>
+             </div>
+            <div class="col-lg-2">
+                <asp:TextBox ID="ablchkout" CssClass="myCall form-control" runat="server" style="border:1px solid #ccc;box-shadow:none;padding:5px;"></asp:TextBox>               
+              
+                    <%--<script type="text/javascript">
+                        var checkout = new Date($('').text());
+                        $('.myCall').datepicker({
+                            uiLibrary: 'bootstrap', minDate: new Date(), format: 'dd/mm/yyyy'
+                        });
+    </script>--%>        
+            </div>
+            <div class="col-lg-2">
+              
+        </div>
+   </div>
 
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                            </div>
 </asp:Content>
 
