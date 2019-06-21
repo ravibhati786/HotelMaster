@@ -73,7 +73,7 @@
             <div class="col-lg-2">
              <div class="input-group">
                                            
-                                        <asp:TextBox ID="ablchkin" runat="server" CssClass="myCal form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;" ></asp:TextBox>
+                                        <asp:TextBox ID="ablchkin" runat="server" CssClass="myCal form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;" autocomplete="off" ></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                         </div>
  
@@ -85,7 +85,7 @@
             <div class="col-lg-2">
            <div class="input-group">
                                            
-                                        <asp:TextBox ID="ablchkout" runat="server" CssClass="myCall form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;" ></asp:TextBox>
+                                        <asp:TextBox ID="ablchkout" runat="server" CssClass="myCall form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;" autocomplete="off" ></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                         </div>      
             </div>
@@ -116,7 +116,7 @@
                                     <asp:Label ID="Label5" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
                                     <asp:LinkButton ID="lnkbtnSingleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnSingleDetails_Click" >View Details</asp:LinkButton>
-                                    <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lknbtnSingleBook_Click" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">
@@ -148,7 +148,7 @@
                                     <asp:Label ID="Label18" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
                                     <asp:LinkButton ID="lnkbtnDoubleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnDoubleDetails_Click" >View Details</asp:LinkButton>
-                                    <asp:LinkButton ID="lnkbtnDoubleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnDoubleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lnkbtnDoubleBook_Click" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">
@@ -180,7 +180,7 @@
                                     <asp:Label ID="Label26" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
                                     <asp:LinkButton ID="lnkbtnLuxuryDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnLuxuryDetails_Click" >View Details</asp:LinkButton>
-                                    <asp:LinkButton ID="lnkbtnLuxuryBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnLuxuryBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lnkbtnLuxuryBook_Click" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">

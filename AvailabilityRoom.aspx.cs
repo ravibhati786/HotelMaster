@@ -68,4 +68,22 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("roomdetail.aspx?CheckIn=" + ablchkin.Text + "&CheckOut=" + ablchkout.Text + "&Adults=" + ddladults.SelectedValue + "&Childs=" + ddlchilds.SelectedValue + "&Type=" + "LUXURY" + "&Amount=" + lblLuxuryAmt.Text);
     }
+
+    protected void lknbtnSingleBook_Click(object sender, EventArgs e)
+    {
+        if(Session["CustomerSession"] != null)
+        {
+            Response.Redirect()
+        }
+    }
+
+    protected void lnkbtnDoubleBook_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void lnkbtnLuxuryBook_Click(object sender, EventArgs e)
+    {
+
+    }
 }
