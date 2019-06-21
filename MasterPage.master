@@ -23,12 +23,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <%--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>--%>
     
     <%--<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />--%>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <%--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>--%>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
@@ -179,7 +179,7 @@
     <script>
 
         function openModal() {
-            $('#myModal2').modal({ show: true });
+            $("#myModal2").modal({ show: true });
         }
 
         function name() {
@@ -514,7 +514,7 @@
                                     
                                     <div class="input-group">
                                            
-                                        <asp:TextBox ID="chkin" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" ></asp:TextBox>
+                                        <asp:TextBox ID="chkin" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" autocomplete="off"></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                         </div>
                                     
@@ -530,7 +530,7 @@
                                     
                                     <div class="input-group">
                                            
-                                        <asp:TextBox ID="chkout" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" ></asp:TextBox>
+                                        <asp:TextBox ID="chkout" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" autocomplete="off" ></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                         </div>
 

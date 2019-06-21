@@ -20,6 +20,10 @@ public partial class _Default : System.Web.UI.Page
 
     public void fillAvailabilityPage()
     {
+        ablchkin.Text = Request.QueryString["CheckIN"].ToString();
+        ablchkout.Text = Request.QueryString["CheckOUT"].ToString();
+        ddladults.SelectedIndex = Convert.ToInt32(Request.QueryString["Adult"]);
+        ddladults.SelectedIndex = Convert.ToInt32(Request.QueryString["Child"]);
         DataFunction objdf = new DataFunction();
         SqlParameter[] param = new SqlParameter[1];
         param[0] = new SqlParameter("@guest", SqlDbType.Int);
