@@ -101,9 +101,8 @@
                                     <div class="media-body">
                                         <h4 class="media-heading headofMedia">
                                             <asp:Label ID="Label1" runat="server" Text="Single Room"></asp:Label></h4>
-                                        <asp:Label ID="lblavladults" runat="server"  Text="2"></asp:Label><asp:Label ID="Label2" runat="server"  Text="Adults" style="margin-left:5px"></asp:Label><br />
-                                         <asp:Label ID="lblavlchild" runat="server"  Text="1"></asp:Label><asp:Label ID="Label3" runat="server"  Text="Children" style="margin-left:5px"></asp:Label><br />
-                                        <asp:Label ID="Label7" runat="server" Text="1 Nights"></asp:Label>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -112,11 +111,10 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        &#8377; <asp:Label ID="lblSingleAmt" runat="server" Text="1287"></asp:Label></h5>
-                                    <asp:Label ID="Label5" CssClass="" runat="server" Text=""></asp:Label>
+                                        &#8377; <asp:Label ID="lblSingleAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label7" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Nights"></asp:Label></h5>
+                                    
                                     <br />
-                                    <asp:LinkButton ID="lnkbtnSingleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnSingleDetails_Click" >View Details</asp:LinkButton>
-                                    <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lknbtnSingleBook_Click" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lnkbtnSingleDetails_Click" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">
@@ -131,11 +129,8 @@
                                         <img src="image/r2.jpg" class="media-object" style="width: 150px" />
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="media-heading headofMedia">
+                                        <h4 class="media-heading headofMedia" >
                                             <asp:Label ID="Label11" runat="server" Text="Double Room"></asp:Label></h4>
-                                        <asp:Label ID="Label12" runat="server"  Text="2"></asp:Label><asp:Label ID="Label13" runat="server"  Text="Adults" style="margin-left:5px"></asp:Label><br />
-                                         <asp:Label ID="Label14" runat="server"  Text="1"></asp:Label><asp:Label ID="Label15" runat="server"  Text="Children" style="margin-left:5px"></asp:Label><br />
-                                        <asp:Label ID="Label16" runat="server" Text="1 Nights"></asp:Label>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +139,7 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        &#8377; <asp:Label ID="lblDoubleAmt" runat="server" Text="1287"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblDoubleAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label2" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Nights"></asp:Label></h5>
                                     <asp:Label ID="Label18" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
                                     <asp:LinkButton ID="lnkbtnDoubleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnDoubleDetails_Click" >View Details</asp:LinkButton>
@@ -165,9 +160,6 @@
                                     <div class="media-body">
                                         <h4 class="media-heading headofMedia">
                                             <asp:Label ID="Label19" runat="server" Text="Luxury Room"></asp:Label></h4>
-                                        <asp:Label ID="Label20" runat="server"  Text="2"></asp:Label><asp:Label ID="Label21" runat="server"  Text="Adults" style="margin-left:5px"></asp:Label><br />
-                                         <asp:Label ID="Label22" runat="server"  Text="1"></asp:Label><asp:Label ID="Label23" runat="server"  Text="Children" style="margin-left:5px"></asp:Label><br />
-                                        <asp:Label ID="Label24" runat="server" Text="1 Nights"></asp:Label>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +168,7 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        &#8377; <asp:Label ID="lblLuxuryAmt" runat="server" Text="1287"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblLuxuryAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label3" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Nights"></asp:Label></h5>
                                     <asp:Label ID="Label26" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
                                     <asp:LinkButton ID="lnkbtnLuxuryDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnLuxuryDetails_Click" >View Details</asp:LinkButton>

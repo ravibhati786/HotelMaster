@@ -1,20 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="mybooking.aspx.cs" Inherits="mybooking" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="mybooking.aspx.cs" Inherits="Default2" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<link href="mybooking.css" rel="stylesheet" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link href="mybooking.css" rel="stylesheet" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div style="border:1px solid green; margin:50px;">
+<div style="border:1px solid green; margin:50px;">
         <div class="container" style="border:1px solid grey; margin:50px; border-radius:3px; margin-left:115px;">
             <div class="row">
                 <div class="col-md-8" style="background-color:#f5f5f0;height:500px;">
@@ -126,6 +118,7 @@
             </div>
         </div>
     </div>
-    </form>
-</body>
-</html>
+
+
+</asp:Content>
+

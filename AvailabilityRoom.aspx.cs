@@ -73,7 +73,7 @@ public partial class _Default : System.Web.UI.Page
     {
         if(Session["CustomerSession"] != null)
         {
-            Response.Redirect()
+            
         }
     }
 

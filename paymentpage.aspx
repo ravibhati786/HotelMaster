@@ -1,16 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="paymentpage.aspx.cs" Inherits="paymentpage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="paymentpage.aspx.cs" Inherits="Default2" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     <link href="paymentpage.css" rel="stylesheet" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-     <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="paymentpage.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
             .errormsg {
             
@@ -95,12 +87,11 @@
             
         }
     </script>
-</head>
-<body>
 
-    <form id="form1" onsubmit="return false;" runat="server">
-    
-     <div class="container" style="border:none; margin-top:5%; border-radius:3px; box-shadow:4px 4px 8px silver; background-color:#333333;">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<div class="container" style="border:none; margin-top:200px;margin-bottom:100px; border-radius:3px; box-shadow:4px 4px 8px silver; background-color:#333333;">
          <div style="margin-top:5px;">
             
 
@@ -260,8 +251,6 @@
     </div>    
     </div>
              </div>
-         </div>
-        
-    </form>
-</body>
-</html>
+
+</asp:Content>
+
