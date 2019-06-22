@@ -149,6 +149,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void Search_Click(object sender, EventArgs e)
     {
-        Response.Redirect("AvailabilityRoom.aspx?CheckIN=" + chkin.Text + "&CheckOUT=" + chkout.Text+"&Adult="+ddladults.SelectedIndex+"&Child="+ddlchildren.SelectedIndex);
+        Response.Redirect("AvailabilityRoom.aspx?CheckIN=" + chkin.Text + "&CheckOUT=" + chkout.Text+"&Adult="+ddladults.SelectedValue+"&Child="+ddlchildren.SelectedValue);
     }
 }

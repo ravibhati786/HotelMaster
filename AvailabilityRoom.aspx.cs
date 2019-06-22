@@ -22,8 +22,8 @@ public partial class _Default : System.Web.UI.Page
     {
         ablchkin.Text = Request.QueryString["CheckIN"].ToString();
         ablchkout.Text = Request.QueryString["CheckOUT"].ToString();
-        ddladults.SelectedIndex = Convert.ToInt32(Request.QueryString["Adult"]);
-        ddladults.SelectedIndex = Convert.ToInt32(Request.QueryString["Child"]);
+        ddladults.SelectedValue = (Request.QueryString["Adult"]);
+        ddladults.SelectedValue = (Request.QueryString["Child"]);
         DataFunction objdf = new DataFunction();
         SqlParameter[] param = new SqlParameter[1];
         param[0] = new SqlParameter("@guest", SqlDbType.Int);
@@ -57,37 +57,18 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-
-    protected void lnkbtnSingleDetails_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("roomdetail.aspx?CheckIn="+ablchkin.Text+"&CheckOut="+ablchkout.Text+"&Adults="+ddladults.SelectedValue+"&Childs="+ddlchilds.SelectedValue+"&Type="+"SINGLE"+"&Amount="+lblSingleAmt.Text);
-    }
-
-    protected void lnkbtnDoubleDetails_Click(object sender, EventArgs e)
+    protected void lnkbtnDoubleBook_Click(object sender, EventArgs e)
     {
         Response.Redirect("roomdetail.aspx?CheckIn=" + ablchkin.Text + "&CheckOut=" + ablchkout.Text + "&Adults=" + ddladults.SelectedValue + "&Childs=" + ddlchilds.SelectedValue + "&Type=" + "DOUBLE" + "&Amount=" + lblDoubleAmt.Text);
     }
 
-    protected void lnkbtnLuxuryDetails_Click(object sender, EventArgs e)
+    protected void lnkbtnLuxuryBook_Click(object sender, EventArgs e)
     {
         Response.Redirect("roomdetail.aspx?CheckIn=" + ablchkin.Text + "&CheckOut=" + ablchkout.Text + "&Adults=" + ddladults.SelectedValue + "&Childs=" + ddlchilds.SelectedValue + "&Type=" + "LUXURY" + "&Amount=" + lblLuxuryAmt.Text);
     }
 
     protected void lknbtnSingleBook_Click(object sender, EventArgs e)
     {
-        if(Session["CustomerSession"] != null)
-        {
-            
-        }
-    }
-
-    protected void lnkbtnDoubleBook_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void lnkbtnLuxuryBook_Click(object sender, EventArgs e)
-    {
-
+        Response.Redirect("roomdetail.aspx?CheckIn=" + ablchkin.Text + "&CheckOut=" + ablchkout.Text + "&Adults=" + ddladults.SelectedValue + "&Childs=" + ddlchilds.SelectedValue + "&Type=" + "SINGLE" + "&Amount=" + lblSingleAmt.Text);
     }
 }

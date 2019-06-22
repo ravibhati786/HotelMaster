@@ -54,12 +54,15 @@
                          <p><i class="fas fa-bed"></i>Bed</p> 
                          <p><i class="fas fa-concierge-bell"></i>Room Service</p>
                          </div>
-                         <div class="row" style="margin-top:40px">
+                         <div class="row" style="margin-top:20px">
                          <div class="col-md-6">
-                              <p><i style="font-size:26px" class="fa">&#xf156;</i><asp:Label ID="lblroomprice" CssClass="roomtext" runat="server" Text="1000" style="font-size:2em;"></asp:Label></p>
+                             <h4 style="margin-bottom:0px"> <asp:Label ID="lblbasePrice" runat="server" Text="Label"></asp:Label> X <asp:Label ID="lblnights" runat="server" Text="Label"></asp:Label> </h4> 
+                   
+                             <p><i style="font-size:26px" class="fa">&#xf156;</i><asp:Label ID="lblroomprice" CssClass="roomtext" runat="server" Text="1000" style="font-size:2em;"></asp:Label></p>
+                               
                          </div>
                          <div class="col-md-6"> 
-                             <asp:Button ID="Button1" runat="server" Text="CONTINUE TO BOOK" CssClass="btn btn-danger bookme" />
+                             <asp:Button ID="btnBook" runat="server" Text="CONTINUE TO BOOK" CssClass="btn btn-danger bookme" OnClick="btnBook_Click" />
                          </div>
                          </div>
                  </div>

@@ -16,6 +16,12 @@ public partial class _Default : System.Web.UI.Page
     {
         chkin.Text = Request.QueryString["CheckIn"].ToString();
         chkout.Text = Request.QueryString["CheckOut"].ToString();
+
+        DateTime seconddate = DateTime.Parse(chkout.Text);
+        DateTime firstdate = DateTime.Parse(chkin.Text);
+        TimeSpan diff = seconddate - firstdate;
+        double nights = (diff).TotalDays;
+
         txtadults.Text = Request.QueryString["Adults"].ToString();
         txtchild.Text = Request.QueryString["Childs"].ToString();
         if (Request.QueryString["Type"].ToString() == "SINGLE")
@@ -25,7 +31,23 @@ public partial class _Default : System.Web.UI.Page
         if (Request.QueryString["Type"].ToString() == "LUXURY")
             imgRoom.ImageUrl = "~/image/r4.jpg";
         lblRoomType.Text = Request.QueryString["Type"].ToString();
-        lblroomprice.Text = Request.QueryString["Amount"].ToString();
+        lblbasePrice.Text = Request.QueryString["Amount"];
+        lblnights.Text = nights.ToString();
+        int amount = Convert.ToInt32(Request.QueryString["Amount"]);
+        lblroomprice.Text = (amount *  nights).ToString();
 
+    }
+
+
+    protected void btnBook_Click(object sender, EventArgs e)
+    {
+        if(Session["CustomerSession"] != null)
+        {
+            Response.Redirect("mybooking.aspx");
+        }
+        else
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+        }
     }
 }

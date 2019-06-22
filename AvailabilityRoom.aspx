@@ -111,10 +111,10 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        &#8377; <asp:Label ID="lblSingleAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label7" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Nights"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblSingleAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label7" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Night"></asp:Label></h5>
                                     
                                     <br />
-                                    <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lnkbtnSingleDetails_Click" >Book Now</asp:LinkButton>
+                                    <asp:LinkButton ID="lknbtnSingleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lknbtnSingleBook_Click" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-md-">
@@ -139,10 +139,9 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        &#8377; <asp:Label ID="lblDoubleAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label2" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Nights"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblDoubleAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label2" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Night"></asp:Label></h5>
                                     <asp:Label ID="Label18" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="lnkbtnDoubleDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnDoubleDetails_Click" >View Details</asp:LinkButton>
                                     <asp:LinkButton ID="lnkbtnDoubleBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lnkbtnDoubleBook_Click" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
@@ -168,10 +167,9 @@
                             <div class="col-md-3">
                                 <div class="media-body" style="text-align:">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        &#8377; <asp:Label ID="lblLuxuryAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label3" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Nights"></asp:Label></h5>
+                                        &#8377; <asp:Label ID="lblLuxuryAmt" runat="server" Text="1287"></asp:Label><asp:Label ID="Label3" style="font-family: 'Raleway', sans-serif; font-size: 14px;font-weight: 500; line-height: 1.86;margin-left:15px" runat="server" Text="Per Night"></asp:Label></h5>
                                     <asp:Label ID="Label26" CssClass="" runat="server" Text=""></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="lnkbtnLuxuryDetails" class="bookme" style="text-decoration:none" runat="server" Font-Underline="True" OnClick="lnkbtnLuxuryDetails_Click" >View Details</asp:LinkButton>
                                     <asp:LinkButton ID="lnkbtnLuxuryBook" class="bookme" runat="server" style="margin-left:10px;text-decoration:none"  Font-Underline="True" OnClick="lnkbtnLuxuryBook_Click" >Book Now</asp:LinkButton>
                                 </div>
                             </div>
