@@ -6,8 +6,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<div style="border:1px solid green; margin:50px;">
-        <div class="container" style="border:1px solid grey; margin:50px; border-radius:3px; margin-left:115px;">
+<div style="margin:100px;">
+        <div class="container" style="border-radius:3px;">
             <div class="row">
                 <div class="col-md-8" style="background-color:#f5f5f0;height:500px;">
                     <span style="font-size:30px;">Guest Details</span><hr />
@@ -21,7 +21,7 @@
                             <asp:TextBox ID="txtlastname" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
-                    <div class="row textboxes">
+                    <div class="row textboxes1">
                         <div class="col-md-6">
                             <span>Email Address</span>
                             <asp:TextBox ID="txtemail" runat="server" CssClass="form-control"></asp:TextBox>
@@ -31,30 +31,21 @@
                             <asp:TextBox ID="txtphone" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
-                    <div class="row textboxes">
+                    <div class="row textboxes1" >
+                        <div class="col-md-6 input-group">
+                            <asp:TextBox ID="txtCoupon" runat="server" CssClass="form-control" style="width:75%;margin-left:15px"></asp:TextBox>
+                            <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Apply" />
+                        </div>
+                            
                         <div class="col-md-6">
-                            <span>Country</span>
-                          <div class="dropdown">
-                                 <asp:DropDownList ID="ddlcountry" runat="server"  CssClass="form-control" data-toggle="dropdown" style="background:;color:;">
-       
-                                <asp:ListItem Value="0">----Select Country----</asp:ListItem>
-                                <asp:ListItem>India</asp:ListItem>
-                                <asp:ListItem>Pakistan</asp:ListItem>
-                                <asp:ListItem>England</asp:ListItem>
-                                <asp:ListItem>South Africa</asp:ListItem>
-    
-                       </asp:DropDownList>
-    
-                         </div>
                             
                         </div>
-                        <div class="col-md-6">
-                            <span>NickName Optinal</span>
-                            <asp:TextBox ID="txtnickname" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
                     </div>
-                    <div class="row textboxes">
-                        <div class="col-md-12">
+                    <div class="row textboxes1">
+                        <div class="col-md-8">
+                            
+                        </div>
+                        <div class="col-md-4">
                             <asp:Button ID="btnreserve" runat="server" Text="Reserve Your Room" CssClass="reserve" PostBackUrl="~/paymentpage.aspx"/>
                         </div>
                     </div>
@@ -62,56 +53,66 @@
                 <div class="col-md-4" style="background-color:#d6d6c2; height:500px;">
                     <span style="font-size:30px;">Order Summary</span><hr />
                     <div class="row">
-                        <div class="col-md-12">
-                            <span>show the image of the room which is user selected</span>
+                        <div class="col-md-6">
+                            <big>Room type</big>
+                        </div>
+                        <div class="col-md-6">
+                            <asp:Label ID="lblroomtype" runat="server" Text="Single Room"></asp:Label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <span>Room type</span>
+                            <big>Dates</big>
                         </div>
                         <div class="col-md-6">
-                            <asp:Label ID="lblroomtype" runat="server" Text="show the room type which is user selected"></asp:Label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <span>Dates</span>
-                        </div>
-                        <div class="col-md-6">
-                            <asp:Label ID="lbldates" runat="server" Text="show the dates on which customer will stay"></asp:Label>
+                            <asp:Label ID="lbldatefrom" runat="server" Text="25 June 2019"></asp:Label>
+                            <br />
+                            To
+                            <br />
+                            <asp:Label ID="lbldateto" runat="server" Text="26 June 2019"></asp:Label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <span>Guest</span>
+                            <big>Nights</big>
                         </div>
                         <div class="col-md-6">
-                            <asp:Label ID="lblguest" runat="server" Text="show the number of guest"></asp:Label>
+                            <asp:Label ID="lblNights" runat="server" Text="2"></asp:Label>
+                        </div>
+                    </div><hr />
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <big>Guests</big>
+                        </div>
+                        <div class="col-md-6">
+                            <asp:Label ID="lblguest" runat="server" Text="2"></asp:Label>
                         </div>
                     </div><hr />
                     <div class="row">
                         <div class="col-md-6">
-                            <span>Subtotel</span>
+                            <big>Sub-Total</big>
                         </div>
                         <div class="col-md-6">
-                            <asp:Label ID="lblsubtotel" runat="server" Text="show the totel price of selected room"></asp:Label>
+                            &#8377; <asp:Label ID="lblsubtotel" runat="server" Text="2500"></asp:Label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <span>Discount & Gst</span>
+                            <big>Discount</big>
                         </div>
                         <div class="col-md-6">
-                            <asp:Label ID="lbldiscount" runat="server" Text="show any discount or gst"></asp:Label>
+                            &#8377; -<asp:Label ID="lbldiscount" runat="server" Text="0"></asp:Label>
                         </div>
                     </div><hr />
                     <div class="row">
                         <div class="col-md-6">
-                            <span>Total</span>
+                            <big>Total</big>
                         </div>
                         <div class="col-md-6">
-                            <asp:Label ID="lbltotal" runat="server" Text="show the total amount add with discount or gst"></asp:Label>
+                            <big>
+                            &#8377; <asp:Label ID="lbltotal" runat="server" Text="2500"></asp:Label>
+                            </big>
                         </div>
                     </div>
                 </div>

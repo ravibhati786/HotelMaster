@@ -13,9 +13,6 @@
     <script>
         function cardno()
         {
-            
-           
-           
             var no = document.getElementById("txtcardnumber").value;
             var lengths = no.length;
             var value = no[0];

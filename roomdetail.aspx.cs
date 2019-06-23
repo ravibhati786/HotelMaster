@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
+
     protected void Page_Load(object sender, EventArgs e)
     {
         fillRoomDetails();
@@ -43,7 +44,10 @@ public partial class _Default : System.Web.UI.Page
     {
         if(Session["CustomerSession"] != null)
         {
-            Response.Redirect("mybooking.aspx");
+            string cin, cout, tadult, tchild, rtype, rnight, rprice;
+            cin = chkin.Text; cout = chkout.Text; tadult = txtadults.Text; tchild = txtchild.Text;
+            rtype = lblRoomType.Text; rnight = lblnights.Text; rprice = lblroomprice.Text;
+            Response.Redirect("mybooking.aspx?CheckIn=" + cin + "&CheckOut=" + cout + "&Adults=" + tadult + "&Childs=" + tchild + "&Type=" + rtype +"&Nights="+ rnight + "&Amount=" + rprice);
         }
         else
         {

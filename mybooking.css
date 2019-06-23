@@ -10,13 +10,13 @@
     color:white;
     width:180px;
     height:50px;
-    margin-left:550px;
+    
 }
 .reserve:hover
 {
     background-color: #ff8080;
 }
-.textboxes
+.textboxes1
 {
     margin-top:30px;
 }

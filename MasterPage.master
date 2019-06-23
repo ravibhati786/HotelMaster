@@ -382,7 +382,7 @@
                                         <asp:Label ID="lblAccount" runat="server" Text="Label"></asp:Label>
                                     </a>
                                     <div class="dropdown-signin-content">
-                                        <asp:LinkButton ID="lnkbtnBookings" runat="server">My Bookings</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkbtnBookings" runat="server" PostBackUrl="~/Profile.aspx">My Bookings</asp:LinkButton>
                                         <asp:LinkButton ID="lnkbtnFeedback" runat="server">My Feedback</asp:LinkButton>
                                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LogOut</asp:LinkButton>
                                     </div>
