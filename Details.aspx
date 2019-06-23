@@ -46,12 +46,12 @@
             <div class="col-md-6">
                 <span class="txt-col">Booking ID</span>
                 <h3>
-                    <asp:Label ID="lblbookingid" runat="server" Text="LABEL"></asp:Label></h3>
+                    TUH<asp:Label ID="lblbookingid" runat="server" Text="LABEL"></asp:Label></h3>
             </div>
             <div class="col-md-6" style="text-align: right">
                 <p class="txt-col" style="padding-top: 3%">
                     Booked By
-                    <asp:Label runat="server" Text="Ravi Kumar on Mon, 15 Oct 2018"></asp:Label>
+                    <asp:Label ID="lblBy" runat="server" Text="Ravi Kumar on Mon, 15 Oct 2018"></asp:Label>
                 </p>
             </div>
         </div>

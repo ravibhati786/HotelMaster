@@ -33,12 +33,13 @@
                     </div>
                     <div class="row textboxes1" >
                         <div class="col-md-6 input-group">
-                            <asp:TextBox ID="txtCoupon" runat="server" CssClass="form-control" style="width:75%;margin-left:15px"></asp:TextBox>
-                            <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Apply" />
+                            <asp:TextBox ID="txtCoupon" runat="server" CssClass="form-control" placeholder="Enter Coupon here" style="width:75%;margin-left:15px"></asp:TextBox>
+                            <asp:Button ID="btnApply" CssClass="btn btn-primary" runat="server" Text="Apply" OnClick="btnApply_Click" />
+                       
                         </div>
                             
                         <div class="col-md-6">
-                            
+                            <span id="spnErrorCoupon" runat="server" style="color:red"> Coupon is expired or may be not valid for you! </span>
                         </div>
                     </div>
                     <div class="row textboxes1">
@@ -46,7 +47,7 @@
                             
                         </div>
                         <div class="col-md-4">
-                            <asp:Button ID="btnreserve" runat="server" Text="Reserve Your Room" CssClass="reserve" PostBackUrl="~/paymentpage.aspx"/>
+                            <asp:Button ID="btnreserve" runat="server" Text="Reserve Your Room" CssClass="reserve" OnClick="btnreserve_Click"/>
                         </div>
                     </div>
                 </div>

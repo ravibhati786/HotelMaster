@@ -24,8 +24,7 @@
             font-size: medium;
             
         }
-
-
+       
             .tabpills > li > a:hover, .tabpills>li>a:focus {
                 background-color: transparent;
                 color: white;
@@ -53,17 +52,26 @@
                         </asp:DropDownList>
                     </div>
                     <div class="panel-body">
+                        <asp:Repeater ID="rptr_FillBookings" runat="server">
+                            <ItemTemplate>
+
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="media">
+
                                     <div class="media-left">
-                                        <img src="image/r1.jpg" class="media-object" style="width: 150px" />
+                                       <asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("roomImgURL") %>'  class="media-object" style="width: 150px" />
                                     </div>
                                     <div class="media-body">
                                         <h4 class="media-heading headofMedia">
-                                            <asp:Label ID="Label1" runat="server" Text="Single Room"></asp:Label></h4>
-                                        <asp:Label ID="Label2" runat="server" CssClass="txt-col" Text="2 Guest - 1 Rooms, 1 Nights"></asp:Label><br />
-                                        <asp:Label ID="Label3" runat="server" CssClass="txt-col" Text="Mon, 15 Oct 2018 - Tue, 16 Oct 2018"></asp:Label>
+                                            <asp:Label ID="Label1" style="text-transform:capitalize" runat="server" Text='<%#Eval("roomType") %>'></asp:Label> Room </h4>
+                                        <span class="txt-col">
+                                        <asp:Label ID="Label2" runat="server" CssClass="txt-col" Text='<%#Eval("Guests") %>'></asp:Label> Guest
+                                         - 1 Rooms, <asp:Label ID="Label9" runat="server" Text='<%#Eval("Nights") %>'></asp:Label> Nights<br />
+                                        <asp:Label ID="Label3" runat="server" CssClass="txt-col" Text='<%#Eval("checkIn", "{0:dd/MM/yyyy}") %>'></asp:Label>
+                                        - 
+                                        <asp:Label ID="Label10" runat="server"  CssClass="txt-col" Text='<%#Eval("checkOut", "{0:dd/MM/yyyy}") %>'></asp:Label>
+                                      </span>
                                     </div>
                                 </div>
                             </div>
@@ -71,23 +79,25 @@
                             <div class="col-md-2">
                                 <div class="media-body" style="text-align: center">
                                     <h4 class="media-heading headofMedia">
-                                        <asp:Label ID="Label4" runat="server" Text="Ravi Kumar"></asp:Label></h4>
-                                    <asp:Label ID="Label5" CssClass="txt-col " runat="server" Text="VGRY3798"></asp:Label>
+                                        <asp:Label ID="Label4" runat="server" Text='<%#Eval("guestName") %>'></asp:Label></h4>
+                                    TUH<asp:Label ID="Label5" CssClass="txt-col " runat="server" Text='<%#Eval("roomBillId") %>'></asp:Label>
                                     <br />
-                                    <asp:Label ID="Label6" CssClass="txt-col" runat="server" Text="Mon, 15 Oct 2018"></asp:Label>
+                                    <asp:Label ID="Label6" CssClass="txt-col" runat="server" Text='<%#Eval("book_Date", "{0:dd/MM/yyyy}") %>'></asp:Label>
                                 </div>
                             </div>
                             <div class="col-md-2"></div>
                             <div class="col-md-2">
                                 <div class="media-body" style="text-align: right">
                                     <h5 class="media-heading headofMedia" style="font-size: 17px">
-                                        <asp:Label ID="Label7" runat="server" Text="Checked Out"></asp:Label></h5>
-                                    <asp:Label ID="Label8" CssClass="txt-col " runat="server" Text="Amt. 1287"></asp:Label>
+                                        <asp:Label ID="Label7" runat="server" Text='<%#Eval("status_Type") %>'></asp:Label></h5>
+                                    <asp:Label ID="Label8" CssClass="txt-col " runat="server" Text='<%#Eval("total") %>'></asp:Label>
                                     <br />
-                                    <asp:LinkButton ID="LinkButton1" CssClass="txt-col" runat="server" Font-Underline="True" PostBackUrl="~/Details.aspx">View Details</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton1" CssClass="txt-col" runat="server" Font-Underline="True" PostBackUrl='<%#string.Format("~/Details.aspx?bookId={0}",Eval("roomBillId"))%>'>View Details</asp:LinkButton>
                                 </div>
                             </div>
                         </div>
+                                </ItemTemplate>
+                       </asp:Repeater>
                     </div>
                 </div>
             </div>
