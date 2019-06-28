@@ -45,11 +45,11 @@
             <div id="bookings" class="tab-pane fade in active">
                 <div class="panel panel-default" style="border: none">
                     <div class="panel-heading">
-                        Show  
-                        <asp:DropDownList ID="ddlbookings" runat="server" class="form-control" Style="width: 16%">
+                        Bookings :  
+                        <!--<asp:DropDownList ID="ddlbookings" runat="server" class="form-control" Style="width: 16%">
                             <asp:ListItem Value="0">Upcoming Bookings</asp:ListItem>
                             <asp:ListItem Value="1">Past Bookings</asp:ListItem>
-                        </asp:DropDownList>
+                        </asp:DropDownList>-->
                     </div>
                     <div class="panel-body">
                         <asp:Repeater ID="rptr_FillBookings" runat="server">
@@ -115,29 +115,32 @@
                             <div id="prof" class="tab-pane fade in active">
                                 <div class="form-group">
                                     <label for="name">Full Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter Full Nmae" />
+
+                                    <input id="txtName" runat="server" type="text" class="form-control" placeholder="Enter Full Nmae" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="pwd">Password:</label>
-                                    <input type="number" class="form-control" placeholder="Enter Phone Number" />
+                                    <label for="pwd">Phone :</label>
+                                    <input id="txtPhone" runat="server" type="phone" class="form-control" placeholder="Enter Phone Number" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Password:</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="pwd">
+                                    <label for="email">Email :</label>
+                                    <input id="txtEmail" runat="server" type="email" class="form-control" placeholder="Enter Email" />
                                 </div>
-                                <button type="submit" class="btn btn-success btn-block">Update</button>
+                                <asp:Button ID="btnUpdateProfile" runat="server" class="btn btn-success btn-block" Text="Update" OnClick="btnUpdateProfile_Click" />
+                                
                             </div>
                             <div id="pass" class="tab-pane fade">
                                 <div class="form-group">
                                     <label for="pwd">Current Password:</label>
-                                    <input type="number" class="form-control" placeholder="Enter Current Password" />
+                                    <input type="password" class="form-control" placeholder="Enter Current Password" />
                                 </div>
                                 <div class="form-group">
                                     <label for="pwd">New Password:</label>
-                                    <input type="number" class="form-control" placeholder="Enter New Password" />
+                                    <input type="password" class="form-control" placeholder="Enter New Password" />
                                 </div>
                                 <br />
-                                <button type="submit" class="btn btn-success btn-block">Change Password</button>
+                                <asp:Button ID="btnUpdatePass" runat="server" class="btn btn-success btn-block" Text="Change Password" OnClick="btnUpdatePass_Click" />
+                                
                             </div>
                         </div>
                     </div>
