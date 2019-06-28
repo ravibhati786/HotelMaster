@@ -26,7 +26,7 @@
                               <p>Rs: <asp:Label ID="lblsingleroomprice" runat="server" Text="1000" style="color:red;font-size:15px;"></asp:Label></p>
                          </div>
                          <div class="col-md-6"> 
-                                <asp:HyperLink ID="HyperLink1" runat="server" class="bookme" NavigateUrl="~/mybooking.aspx">Book Now</asp:HyperLink>
+                                
                          </div>
                          </div>
                  </div>
@@ -55,7 +55,7 @@
                              
                          </div>
                          <div class="col-md-6"> 
-                                <asp:HyperLink ID="HyperLink2" runat="server" class="bookme" NavigateUrl="~/mybooking.aspx">Book Now</asp:HyperLink>
+                                
                          </div>
                          </div>
                  </div>
@@ -83,7 +83,7 @@
                               <p>Rs: <asp:Label ID="lblluxuryroomprice" runat="server" Text="3000" style="color:red;font-size:15px;"></asp:Label></p>
                          </div>
                          <div class="col-md-6"> 
-                                <asp:HyperLink ID="HyperLink3" runat="server" class="bookme" NavigateUrl="~/mybooking.aspx">Book Now</asp:HyperLink>
+                                
                          </div>
                          </div>
                  </div>
