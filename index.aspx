@@ -18,7 +18,9 @@
           <div class="col-sm-2"></div>
                   <div class="col-sm-3 " style="margin-top:100px;">
                 <h2 class="heading">Welcome!</h2>
-                 <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                 <p class="mb-4">In the heart of pune, right in the middle of Hills and  Dam, lies the Unique Hotel , The Best Luxury Hotel in pune, 
+                     most famous for its hard working and dedicated staff along with all the luxuries and amenities 
+                     to create a vacation you’ll never forget…</p>
             <p><a href="#" class="learnbtn" style="">Learn More</a></p>
 
             </div>
