@@ -12,8 +12,15 @@ public partial class Default4 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        fillAllBookings();
-        fillProfile();
+        if (Session["CustomerSession"] != null)
+        {
+            fillAllBookings();
+            fillProfile();
+        }
+        else
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 
     public void fillAllBookings()

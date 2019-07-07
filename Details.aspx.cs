@@ -17,6 +17,10 @@ public partial class Default4 : System.Web.UI.Page
         {
             fillDetailsPage();
         }
+        else
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 
     public void fillDetailsPage()

@@ -14,8 +14,15 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        spnErrorCoupon.Visible = false;
-        fillMyBookings();
+        if (Session["CustomerSession"] != null)
+        {
+            spnErrorCoupon.Visible = false;
+            fillMyBookings();
+        }
+        else
+        {
+            Response.Redirect("index.aspx");
+        }
     }
 
     public void fillMyBookings()
