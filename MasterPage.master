@@ -154,7 +154,10 @@
             text-decoration: none;
         }
 
-        #lblAccount {
+        .lblaccount{
+            white-space:nowrap;
+            width:50px;
+            overflow-y:hidden;
             text-overflow: ellipsis;
         }
 
@@ -379,7 +382,7 @@
                             <li>
                                 <div class="dropdown-signin" id="divAccount" runat="server">
                                     <a href="#" class="signinbtn">Hi
-                                        <asp:Label ID="lblAccount" runat="server" Text="Label"></asp:Label>
+                                        <asp:Label ID="lblAccount" CssClass="lblaccount" runat="server" Text="Label"></asp:Label>
                                     </a>
                                     <div class="dropdown-signin-content">
                                         <asp:LinkButton ID="lnkbtnBookings" runat="server" PostBackUrl="~/Profile.aspx">My Bookings</asp:LinkButton>
