@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
 
 <!DOCTYPE html>
 
@@ -234,7 +234,7 @@
             </a>
             <div class="collapse" id="booking">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="addbooking.aspx">New Booking</a></li>
+                <li class="nav-item"> <a class="nav-link" href="admin/addbooking.aspx">New Booking</a></li>
                 <li class="nav-item"> <a class="nav-link" href="viewbooking.aspx">View Booking</a></li>
                   
               </ul>
