@@ -16,28 +16,32 @@
             var no = document.getElementById("txtcardnumber").value;
             var lengths = no.length;
             var value = no[0];
-          
              if(no=="")
             {
-                 document.getElementById("cardnoerror").innerHTML = " card no is empty";
+                 document.getElementById("cardnoerror").innerHTML = " Card No Is Empty";
+                 return false;
 
             }
        else if(lengths!=16)
             {
-                document.getElementById("cardnoerror").innerHTML = "invalid card no";
+           document.getElementById("cardnoerror").innerHTML = "Invalid Card No";
+           return false;
           }
           else if(isNaN(no))
           {
 
-              document.getElementById("cardnoerror").innerHTML = "enter only number";
+              document.getElementById("cardnoerror").innerHTML = "Enter Only Number";
+              return false;
           }
           else if(value!=4)
           {
-              document.getElementById("cardnoerror").innerHTML = "invalid card no";
+              document.getElementById("cardnoerror").innerHTML = "Invalid Card No";
+              return false;
           }
             else
             {
               document.getElementById("cardnoerror").innerHTML = "";
+              return true;
               
             } 
         }
@@ -45,13 +49,16 @@
             var name = document.getElementById("txtnameonthecard").value;
 
             if (name == "") {
-                document.getElementById("cardnameerror").innerHTML = "Name is Empty";
+                document.getElementById("cardnameerror").innerHTML = "Name Is Empty";
+                return false;
             }
             else if (!isNaN(name)) {
-                document.getElementById("cardnameerror").innerHTML = "Name is invalid";
+                document.getElementById("cardnameerror").innerHTML = "Name Is Invalid";
+                return false;
             }
             else {
                 document.getElementById("cardnameerror").innerHTML = "";
+                return true;
             }
         }
         function cvvno()
@@ -62,26 +69,35 @@
 
 
             if (no == "") {
-                document.getElementById("cvverror").innerHTML = " card no is empty";
+                document.getElementById("cvverror").innerHTML = " CVV No Is Empty";
+                return false;
             }
             else if (lengths!=3) {
-                document.getElementById("cvverror").innerHTML = "invalid card no";
+                document.getElementById("cvverror").innerHTML = "Invalid CVV No";
+                return false;
             }
             else if (isNaN(no)) {
 
-                document.getElementById("cvverror").innerHTML = "enter only number";
+                document.getElementById("cvverror").innerHTML = "Enter Only Number";
+                return false;
             }
             else {
                 document.getElementById("cardnoerror").innerHTML = "";
+                return true;
             }
         }
         function paymentvalidate()
         {
-            
-            cardno();
-            cardname();
-            cvvno();
-            
+                cardno();
+                cardname();
+                cvvno();
+            if (cardno() && cardname() && cvvno())
+            {
+                return true;
+            }
+            else {
+                return false;
+            }      
         }
     </script>
 
@@ -174,7 +190,7 @@
                      </div>
                      <div class="col-md-6">
 
-                        <asp:Button ID="btnmakepayment" runat="server" Text="Make Payment" OnClientClick="paymentvalidate()"  CssClass="formakepayment"/>
+                        <asp:Button ID="btnmakepayment" runat="server" Text="Make Payment" OnClientClick="return paymentvalidate()"  CssClass="formakepayment"/>
 
                      </div>
                  </div>
