@@ -29,7 +29,7 @@
 
        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="home.aspx">Hotel Admin</a>
+        <a class="navbar-brand brand-logo" href="index.aspx">Hotel Admin</a>
         <a class="navbar-brand brand-logo-mini" href="index.aspx"><img src="images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -234,7 +234,7 @@
             </a>
             <div class="collapse" id="booking">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="admin/addbooking.aspx">New Booking</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addbooking.aspx">New Booking</a></li>
                 <li class="nav-item"> <a class="nav-link" href="viewbooking.aspx">View Booking</a></li>
                   
               </ul>
