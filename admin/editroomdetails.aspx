@@ -34,7 +34,7 @@
                               </div>
                           <div class="col-md-6">
                            <div class="form-group">
-                               <asp:Button ID="btnroomedit" runat="server" style="margin-top:15px" CssClass="btn btn-danger" Text="Edit" />
+                               <asp:Button ID="btnroomedit" runat="server" style="margin-top:15px" CssClass="btn btn-danger" Text="Edit" OnClick="btnroomedit_Click" />
                       </div>
                               </div>
                       </div>
@@ -43,14 +43,14 @@
                           <div class="col-md-6">
                               <div class="form-group">
                       <label for="exampleInputUsername1">Room Number</label>
-        <asp:TextBox ID="lblroomnumber" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
+        <asp:TextBox ID="txtroomnumber" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
                      
                     </div>
                               </div>
                           <div class="col-md-6">
                            <div class="form-group">
                       <label for="exampleInputEmail1">Max Capacity</label>
-                      <asp:TextBox ID="lblmaxcapacity" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
+                      <asp:TextBox ID="txtmaxcapacity" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
                     </div>
                               </div>
                       </div>
@@ -60,13 +60,13 @@
                           <div class="col-md-6">
                               <div class="form-group">
                               <label for="exampleInputConfirmPassword1">Room Max Children</label>
-                                <asp:TextBox ID="lblmaxchild" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
+                                <asp:TextBox ID="txtmaxchild" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
                           </div>
                               </div>
                           <div class="col-md-6">
                            <div class="form-group">
                       <label for="exampleInputConfirmPassword1">Room Max Adults</label>
-                      <asp:TextBox ID="lblmaxadults" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
+                      <asp:TextBox ID="txtmaxadults" runat="server" class="form-control" placeholder="Enter Number"></asp:TextBox>
                     </div>
                               </div>
                       </div>
@@ -75,13 +75,13 @@
                           <div class="col-md-6">
                               <div class="form-group">
                       <label for="exampleInputPassword1">Room Type</label>
-                      <asp:TextBox ID="lblroomtype" runat="server" class="form-control" placeholder="Enter Room Type"></asp:TextBox>
+                      <asp:TextBox ID="txtroomtype" runat="server" class="form-control" placeholder="Enter Room Type"></asp:TextBox>
                     </div>
                               </div>
                           <div class="col-md-6">
                            <div class="form-group">
                               <label for="exampleInputConfirmPassword1">Room Image</label><br />
-                               <asp:Image ID="imgroom" runat="server" Width="100" Height="100" />
+                               <asp:Image ID="imgroom" runat="server" ImageUrl='<%# Eval("roomImgURL") %>' Width="100" Height="100" />
                           </div>
                               </div>
                       </div>
@@ -90,13 +90,13 @@
                           <div class="col-md-6">
                               <div class="form-group">
                               <label for="exampleInputConfirmPassword1">Room Price</label>
-                                <asp:TextBox ID="lblroomprice" runat="server" class="form-control" placeholder="Enter Room Price"></asp:TextBox>
+                                <asp:TextBox ID="txtroomprice" runat="server" class="form-control" placeholder="Enter Room Price"></asp:TextBox>
                           </div>
                               </div>
                           <div class="col-md-6">
                            <div class="form-group">
                               <label for="exampleInputConfirmPassword1">Upload Room Image</label><br />
-                               <asp:FileUpload ID="FileUpload2" runat="server" />
+                               <asp:FileUpload ID="RoomImageFileUpload" runat="server" />
                           </div>
                               </div>
                       </div>
@@ -106,7 +106,7 @@
                         Remember me
                       </label>
                     </div>
-        <asp:Button ID="Button1" runat="server" class="btn btn-gradient-primary mr-2" Text="Update" />
+        <asp:Button ID="btnupdateroomdetails" runat="server" class="btn btn-gradient-primary mr-2" Text="Update" OnClick="btnupdateroomdetails_Click" />
                     <asp:Button ID="Button2" runat="server" class="btn btn-light" Text="Cancel" />
                    
                  </div>

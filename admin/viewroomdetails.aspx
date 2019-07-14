@@ -51,175 +51,39 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      
+                        <asp:Repeater ID="Repeater1" runat="server">
+                            <ItemTemplate>
+
+                                <tr>
                         
                         <td>
-                           <asp:Label ID="lblroomnumber" runat="server" Text="101"></asp:Label> 
+                           <asp:Label ID="lblroomnumber" runat="server" Text='<%# Bind("doorNo") %>'></asp:Label> 
                         </td>
                         <td>
                           <div class="">
-                             <asp:Label ID="lblmaxcapacity" runat="server" Text="5"></asp:Label> 
+                             <asp:Label ID="lblmaxcapacity" runat="server" Text='<%# Bind("maxCapacity") %>'></asp:Label> 
                           </div>
                         </td>
                         <td>
-                         <asp:Label ID="lblmaxchild" runat="server" Text="2"></asp:Label> 
+                         <asp:Label ID="lblmaxchild" runat="server" Text='<%# Bind("roomMaxChildren") %>'></asp:Label> 
                         </td>
                         <td>
-                         <asp:Label ID="lblmaxadults" runat="server" Text="2"></asp:Label> 
+                         <asp:Label ID="lblmaxadults" runat="server" Text='<%# Bind("roomMaxAdults") %>'></asp:Label> 
                         </td>
                           <td>
-                           <asp:Label ID="lblroomtype" runat="server" Text="Single"></asp:Label> 
+                           <asp:Label ID="lblroomtype" runat="server" Text='<%# Bind("roomType") %>'></asp:Label> 
                         </td>
                           <td>
-                               <asp:Label ID="lblroomimg" runat="server" Text="imgurl"></asp:Label> 
+                               <asp:Label ID="lblroomimg" runat="server" Text='<%# Bind("roomImgURL") %>'></asp:Label> 
                           </td>
-                          <td> <asp:Label ID="lblroomprice" runat="server" Text="1000"></asp:Label> </td>
+                          <td> <asp:Label ID="lblroomprice" runat="server" Text='<%# Bind("roomPrice") %>'></asp:Label> </td>
 
                       </tr>
-                      <tr>
-                        
-                        <td>
-                          Messsy Adam
-                        </td>
-                        <td>
-                          <div>
-                          9828717565
-                          </div>
-                        </td>
-                        <td>
-                          loky1218@gmail.com
-                        </td>
-                        <td>
-                          July 1, 2015
-                        </td>
-                          <td>
-                          July 1, 2015
-                        </td>
-                          <td>
-                              Double
-                          </td>
-                      <td><label class="badge badge-warning">UnPaid</label></td>
-                      </tr>
-                        
-                      <tr>
-                        
-                        <td>
-                          John Richards
-                        </td>
-                        <td>
-                          <div class="">
-                              9828717565
-                          </div>
-                        </td>
-                        <td>
-                          ravibhati786@gmail.com
-                        </td>
-                        <td>
-                          Apr 12, 2015
-                        </td>
-                          <td>
-                          July 1, 2015
-                        </td>
-                          <td>
-                              Single
-                          </td>
-                          <td><label class="badge badge-success">Paid</label></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Peter Meggik
-                        </td>
-                        <td>
-                          <div class="">
-                          9828717565
-                          </div>
-                        </td>
-                        <td>
-                          hggehlot777@gmail.com
-                        </td>
-                        <td>
-                          May 15, 2015
-                        </td>
-                          <td>
-                          July 1, 2015
-                        </td>
-                          <td>
-                              Double
-                          </td>
-                          <td><label class="badge badge-warning">UnPaid</label></td>
-                      </tr>
-                      <tr>
-                        
-                        <td>
-                          Edward
-                        </td>
-                        <td>
-                          <div class="">
-                          9828717565
-                          </div>
-                        </td>
-                        <td>
-                          $ 160.25
-                        </td>
-                        <td>
-                          May 03, 2015
-                        </td>
-                          <td>
-                          July 1, 2015
-                        </td>
-                          <td>
-                              Single
-                          </td>
-                          <td><label class="badge badge-success">Paid</label></td>
-                      </tr>
-                      <tr>
-                        
-                        <td>
-                          John Doe
-                        </td>
-                        <td>
-                          <div class="">
-                              9828717565
-                          </div>
-                        </td>
-                        <td>
-                          $ 123.21
-                        </td>
-                        <td>
-                          April 05, 2015
-                        </td>
-                          <td>
-                          July 1, 2015
-                        </td>
-                          <td>
-                              Double
-                          </td>
-                          <td><label class="badge badge-success">Paid</label></td>
-                      </tr>
-                      <tr>
-                        
-                        <td>
-                          Henry Tom
-                        </td>
-                        <td>
-                          <div class="">
-                          9828717565
-                          </div>
-                        </td>
-                        <td>
-                          $ 150.00
-                        </td>
-                        <td>
-                          June 16, 2015
-                        </td>
-                          <td>
-                          July 1, 2015
-                        </td>
-                          <td>
-                              Single
-                          </td>
-                          <td><label class="badge badge-warning">UnPaid</label></td>
-                      </tr>
+
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    
                     </tbody>
                   </table>
                 </div>

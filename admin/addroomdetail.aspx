@@ -64,7 +64,7 @@
                           <div class="col-md-6">
                            <div class="form-group">
                               <label for="exampleInputConfirmPassword1">Upload Room Image</label><br />
-                               <asp:FileUpload ID="FileUpload1" runat="server" />
+                               <asp:FileUpload ID="RoomImageFileUpload" runat="server" />
                           </div>
                               </div>
                       </div>
