@@ -2,7 +2,103 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 <link href="mybooking.css" rel="stylesheet" />
+    <style>
+          .errormsg {
+         
+           
+             color:red;
+            
 
+         }
+    </style>
+    <script>
+        function researvevalidate()
+        {
+            
+                rname();
+                rlastname();
+                remail();
+                rnumberr();
+                if (rname() && remail() && rnumber() && rlastname()) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+        }
+        function rname() {
+            var fname = document.getElementById("txtfirstname").value;
+            if (fname == "") {
+                document.getElementById("rnameerror").innerHTML = "Name is Empty";
+                return false;
+            }
+            else if (!isNaN(fname)) {
+                document.getElementById("rnameerror").innerHTML = "Name is invalid";
+                return false;
+            }
+            else {
+                document.getElementById("rnameerror").innerHTML = "";
+                return true;
+            }
+        }
+
+        function rlastname() {
+            var lastname = document.getElementById("txtlastname").value;
+
+            if (lastname == "") {
+                document.getElementById("rlastnameerror").innerHTML = "Name is Empty";
+                return false;
+            }
+            else if (!isNaN(lastname)) {
+                document.getElementById("rlastnameerror").innerHTML = "Name is invalid";
+                return false;
+            }
+            else {
+                document.getElementById("rlastnameerror").innerHTML = "";
+                return true;
+            }
+        }
+
+        function remail() {
+
+            var email = document.getElementById("txtemail").value;
+            var atposition = email.indexOf("@");
+            var dotposition = email.dotposition;
+            if (email == "") {
+                document.getElementById("remailerror").innerHTML = "email is Empty";
+                return false;
+            }
+            else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= email.length) {
+                document.getElementById("remailerror").innerHTML = "email is not correct";
+                return false;
+            }
+            else {
+                document.getElementById("remailerror").innerHTML = "";
+                return true;
+            }
+
+        }
+
+        function rnumber() {
+            var number = document.getElementById("txtphone").value;
+            if (number == "") {
+                document.getElementById("rnumbererror").innerHTML = " number is empty";
+                return false;
+            }
+            else if (number.length != 10) {
+                document.getElementById("rnumbererror").innerHTML = " number is wrong";
+                return false;
+            }
+            else if (isNaN(number)) {
+                document.getElementById("rnumbererror").innerHTML = " enter number value only";
+                return false;
+            }
+            else {
+                document.getElementById("rnumbererror").innerHTML = "";
+                return true;
+            }
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
@@ -15,20 +111,24 @@
                         <div class="col-md-6">
                             <span>First Name</span>
                             <asp:TextBox ID="txtfirstname" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div id="rnameerror" class="errormsg"></div>
                         </div>
                         <div class="col-md-6">
                             <span>Last Name</span>
                             <asp:TextBox ID="txtlastname" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div id="rlastnameerror" class="errormsg"></div>
                         </div>
                     </div>
                     <div class="row textboxes1">
                         <div class="col-md-6">
                             <span>Email Address</span>
                             <asp:TextBox ID="txtemail" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div id="remailerror" class="errormsg"></div>
                         </div>
                         <div class="col-md-6">
                             <span>Phone Number</span>
                             <asp:TextBox ID="txtphone" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div id="rnumbererror" class="errormsg"></div>
                         </div>
                     </div>
                     <div class="row textboxes1" >
@@ -47,7 +147,7 @@
                             
                         </div>
                         <div class="col-md-4">
-                            <asp:Button ID="btnreserve" runat="server" Text="Reserve Your Room" CssClass="reserve" OnClick="btnreserve_Click"/>
+                            <asp:Button ID="btnreserve" runat="server" Text="Reserve Your Room" CssClass="reserve" OnClick="btnreserve_Click" OnClientClick="researvevalidate()"/>
                         </div>
                     </div>
                 </div>
