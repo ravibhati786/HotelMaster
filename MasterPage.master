@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="StyleSheet.css" />
+    <link rel="stylesheet" href="StyleSheet.css" /> 
     <link href="booknow.css" rel="stylesheet" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -314,6 +314,80 @@
         }
 
 
+        function searchvalidate() {
+            checkin();
+            checkout();
+            adult();
+            children();
+            if (checkin() && checkout() && adult() && children()) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+
+        function checkout() {
+            var checkout = document.getElementById("ablchkout").value;
+            if (checkout == "") {
+                document.getElementById("checkouterror").innerHTML = " Plese Enter The Check Out Date";
+                return false;
+            }
+            else {
+                document.getElementById("checkouterror").innerHTML = "";
+                return true;
+            }
+        }
+
+        function checkin() {
+            var checkin = document.getElementById("ablchkin").value;
+            alert(checkin);
+            if (checkin == "") {
+                document.getElementById("checkinerror").innerHTML = " Plese Enter The Check In Date";
+                return false;
+            }
+            else {
+                document.getElementById("checkinerror").innerHTML = "";
+                return true;
+            }
+        }
+
+        function adult() {
+            var adult = document.getElementById("ddladults").value;
+            if (cadult == "") {
+                document.getElementById("adulterror").innerHTML = " Plese Select No Of Adults";
+                return false;
+            }
+            else if (isNaN(adult)) {
+                document.getElementById("adulterror").innerHTML = " Wrong Entry ";
+                return false;
+
+            }
+            else {
+                document.getElementById("adulterror").innerHTML = "";
+                return true;
+            }
+        }
+
+        function children() {
+            var child = document.getElementById("ddlchilds").value;
+            if (child == "") {
+                document.getElementById("childerror").innerHTML = " Plese Select No Of Child ";
+                return false;
+            }
+            else if (isNaN(child)) {
+                document.getElementById("childerror").innerHTML = " Wrong Entry ";
+                return false;
+
+            }
+            else {
+                document.getElementById("childerror").innerHTML = "";
+                return true;
+            }
+        }
+
+
     </script>
     <script type="text/javascript">
                 $(document).ready(function () {
@@ -520,6 +594,7 @@
                                            
                                         <asp:TextBox ID="chkin" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" autocomplete="off"></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <div id="checkinerror" class="errormsg"></div>
                                         </div>
                                     
                                     
@@ -536,6 +611,7 @@
                                            
                                         <asp:TextBox ID="chkout" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" autocomplete="off" ></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <div id="checkouterror" class="errormsg"></div>
                                         </div>
 
                                          <%--<script>
@@ -556,6 +632,7 @@
                                             <asp:ListItem Value="3">3</asp:ListItem>
                                             <asp:ListItem Value="4">4</asp:ListItem>
                                         </asp:DropDownList>
+                                        <div id="adulterror" class="errormsg"></div>
                                     </div>
                                 </div>
 
@@ -571,6 +648,7 @@
                                             <asp:ListItem Value="4">4</asp:ListItem>
 
                                         </asp:DropDownList>
+                                        <div id="childerror" class="errormsg"></div>
                                     </div>
                                 </div>
                             </div>
@@ -579,7 +657,7 @@
                                     <span style="font-style: oblique">Check Availebility</span>
                                 </div>
                                 <div class="col-md-6">
-                                    <asp:Button ID="Search" runat="server" Text="Search" CssClass="searchbtn" OnClick="Search_Click"/>
+                                    <asp:Button ID="Search" runat="server" Text="Search" CssClass="searchbtn" OnClick="Search_Click"  OnClientClick="searchvalidate()"/>
                                 </div>
                             </div>
                         </div>
