@@ -12,7 +12,7 @@
          }
     </style>
     <script>
-        function researvevalidate()
+        function reservevalidate()
         {
             
                 rname();
@@ -147,7 +147,7 @@
                             
                         </div>
                         <div class="col-md-4">
-                            <asp:Button ID="btnreserve" runat="server" Text="Reserve Your Room" CssClass="reserve" OnClick="btnreserve_Click" OnClientClick="researvevalidate()"/>
+                            <asp:Button ID="btnreserve" runat="server" Text="Reserve Your Room" CssClass="reserve" OnClick="btnreserve_Click" OnClientClick="return reservevalidate();"/>
                         </div>
                     </div>
                 </div>

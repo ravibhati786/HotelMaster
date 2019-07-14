@@ -23,7 +23,7 @@ public partial class _Default : System.Web.UI.Page
         ablchkin.Text = Request.QueryString["CheckIN"].ToString();
         ablchkout.Text = Request.QueryString["CheckOUT"].ToString();
         ddladults.SelectedValue = (Request.QueryString["Adult"]);
-        ddladults.SelectedValue = (Request.QueryString["Child"]);
+        ddlchilds.SelectedValue = (Request.QueryString["Child"]);
         DataFunction objdf = new DataFunction();
         SqlParameter[] param = new SqlParameter[1];
         param[0] = new SqlParameter("@guest", SqlDbType.Int);

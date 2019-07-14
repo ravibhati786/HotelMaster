@@ -140,7 +140,7 @@
                                             <asp:ListItem Value="3">3</asp:ListItem>
                                             <asp:ListItem Value="4">4</asp:ListItem>
                                         </asp:DropDownList>
-                 <div id="adulterror" class="errormsg"></div>
+                 <span id="adulterror" class="errormsg"></span>
                  <asp:Label ID="Label10" runat="server"  Text="Children" style="margin-left:20px"></asp:Label>
                 <asp:DropDownList ID="ddlchilds" runat="server" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" Style="background: #fff; color: #000;height:30px;margin-left:5px">
                                             <asp:ListItem Value="0">0</asp:ListItem>
@@ -149,14 +149,14 @@
                                             <asp:ListItem Value="3">3</asp:ListItem>
                                             <asp:ListItem Value="2">4</asp:ListItem>
                                         </asp:DropDownList>
-            <div id="childerror" class="errormsg"></div>
+            <span id="childerror" class="errormsg"></span>
             </div>
             <div class="col-lg-2">
              <div class="input-group">
                                            
                                         <asp:TextBox ID="ablchkin" runat="server" CssClass="myCal form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;" autocomplete="off" ></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                             <div id="checkinerror" class="errormsg"></div>
+                                             <span id="checkinerror" class="errormsg"></span>
                                         </div>
  
             </div>
@@ -169,7 +169,7 @@
                                            
                                         <asp:TextBox ID="ablchkout" runat="server" CssClass="myCall form-control" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;" autocomplete="off" ></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                            <div id="checkouterror" class="errormsg"></div>
+                                            <span id="checkouterror" class="errormsg"></span>
                                         </div>      
             </div>
             <div class="col-lg-2">

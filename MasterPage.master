@@ -319,9 +319,9 @@
             checkin();
             checkout();
             adult();
-            children();
+            //children();
 
-            if (checkin() && checkout() && adult() && children()) {
+            if (checkin() && checkout() && adult()) {
                return true;
             }
             else {
@@ -359,14 +359,9 @@
         function adult() {
             var adult = document.getElementById("ddladults").value;
         
-            if (adult == "" && adult==0) {
+            if (adult == 0) {
                 document.getElementById("adulterror").innerHTML = " Plese Select No Of Adults";
                 return false;
-            }
-            else if (isNaN(adult)) {
-                document.getElementById("adulterror").innerHTML = " Wrong Entry ";
-                return false;
-
             }
             else {
                 document.getElementById("adulterror").innerHTML = "";
@@ -374,22 +369,17 @@
             }
         }
 
-        function children() {
-            var child = document.getElementById("ddlchildren").value;
-            if (child == "" && child==0) {
-                document.getElementById("childerror").innerHTML = " Plese Select No Of Child ";
-                return false;
-            }
-            else if (isNaN(child)) {
-                document.getElementById("childerror").innerHTML = " Wrong Entry ";
-                return false;
-
-            }
-            else {
-                document.getElementById("childerror").innerHTML = "";
-                return true;
-            }
-        }
+        //function children() {
+        //    var child = document.getElementById("ddlchildren").value;
+        //    if (child==0) {
+        //        document.getElementById("childerror").innerHTML = " Plese Select No Of Child ";
+        //        return false;
+        //    }
+        //    else {
+        //        document.getElementById("childerror").innerHTML = "";
+        //        return true;
+        //    }
+        //}
 
 
     </script>
@@ -598,7 +588,7 @@
                                            
                                         <asp:TextBox ID="chkin" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" autocomplete="off"></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                          <div id="checkinerror" class="errormsg"></div>
+                                          
                                         </div>
                                     
                                     
@@ -615,7 +605,6 @@
                                            
                                         <asp:TextBox ID="chkout" runat="server" CssClass="" style="border:1px solid #ccc;box-shadow:none;padding:5px;margin-left:3px;width:93px;border-top-left-radius:5px;border-bottom-left-radius:5px" autocomplete="off" ></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                        <div id="checkouterror" class="errormsg"></div>
                                         </div>
 
                                          <%--<script>
@@ -636,7 +625,7 @@
                                             <asp:ListItem Value="3">3</asp:ListItem>
                                             <asp:ListItem Value="4">4</asp:ListItem>
                                         </asp:DropDownList>
-                                        <div id="adulterror" class="errormsg"></div>
+                                        
                                     </div>
                                 </div>
 
@@ -652,10 +641,26 @@
                                             <asp:ListItem Value="4">4</asp:ListItem>
 
                                         </asp:DropDownList>
-                                        <div id="childerror" class="errormsg"></div>
+                                        
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div id="checkinerror" class="errormsg"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div id="checkouterror" class="errormsg"></div>
+                                </div>
+
+                                <div class="col-md-3">
+                                      <div id="adulterror" class="errormsg"></div>
+                                </div>
+                                 <div class="col-md-3">
+                                      <div id="childerror" class="errormsg"></div>
+                                </div>
+                            </div>
+
                             <div class="row row2" style="margin-top: 40px;">
                                 <div class="col-md-6" style="margin-top: 10px;">
                                     <span style="font-style: oblique">Check Availebility</span>
