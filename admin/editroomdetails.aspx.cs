@@ -43,7 +43,7 @@ public partial class _Default : System.Web.UI.Page
             txtroomtype.Text = ds.Tables[0].Rows[0]["roomType"].ToString();
             txtmaxadults.Text = ds.Tables[0].Rows[0]["roomMaxAdults"].ToString();
             txtmaxchild.Text = ds.Tables[0].Rows[0]["roomMaxChildren"].ToString();
-            imgroom.ImageUrl = ds.Tables[0].Rows[0]["roomImgURL"].ToString();
+            imgroom.ImageUrl = ds.Tables[0].Rows[0]["roomImgURL"].ToString(); 
             txtroomprice.Text = ds.Tables[0].Rows[0]["roomprice"].ToString();
         }
     }
@@ -55,7 +55,7 @@ public partial class _Default : System.Web.UI.Page
         DataFunction objdf = new DataFunction();
         SqlParameter[] param = new SqlParameter[7];
 
-        param[0] = new SqlParameter("@roomnumber", SqlDbType.Int);
+        param[0] = new SqlParameter("@doorno", SqlDbType.Int);
         param[0].Value = txtroomnumber.Text.Trim();
         param[1] = new SqlParameter("@maxcapacity", SqlDbType.Int);
         param[1].Value = txtmaxcapacity.Text.Trim();
@@ -84,19 +84,21 @@ public partial class _Default : System.Web.UI.Page
         param[6] = new SqlParameter("@roomprice", SqlDbType.Int);
         param[6].Value = txtroomprice.Text.Trim();
 
-        int result = objdf.ExecuteQuery(param,"usp_AddRoomDetails");
+        int result = objdf.ExecuteQuery(param, "usp_UpdateRoomDetails");
 
         if (result > 0)
         {
             Response.Write("<script>alert('Data Update Successfully')</script>");
         }
 
-        txtroomnumber.Text = "";
-        txtmaxcapacity.Text = "";
-        txtmaxadults.Text = "";
-        txtmaxchild.Text = "";
-        txtroomtype.Text = "";
-        txtroomprice.Text = "";
+        txtroomnumber.Text     = "";
+        txtmaxcapacity.Text    = "";
+        txtmaxadults.Text      = "";
+        txtmaxchild.Text       = "";
+        txtroomtype.Text       = "";
+        txtroomprice.Text      = "";
+        txteditroomnumber.Text = "";
+        imgroom.ImageUrl       = "";
 
     }
 

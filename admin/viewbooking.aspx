@@ -25,7 +25,9 @@
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        
+                        <th >
+                          Customer Id
+                        </th>
                         <th>
                           Name
                         </th>
@@ -42,7 +44,7 @@
                               Depart
                           </th>
                           <th>
-                              Room Type
+                              Room Number
                           </th>
                           <th>
                           Payment                              
@@ -51,7 +53,7 @@
                     </thead>
                     <tbody>
                       <tr>
-                        
+                        <td>1</td>
                         <td>
                           Herman Beck
                         </td>
@@ -70,13 +72,13 @@
                           May 15, 2015
                         </td>
                           <td>
-                              Single
+                              101
                           </td>
                           <td><label class="badge badge-success">Paid</label></td>
 
                       </tr>
                       <tr>
-                        
+                        <td>2</td>
                         <td>
                           Messsy Adam
                         </td>
@@ -95,13 +97,13 @@
                           July 1, 2015
                         </td>
                           <td>
-                              Double
+                              102
                           </td>
                       <td><label class="badge badge-warning">UnPaid</label></td>
                       </tr>
                         
                       <tr>
-                        
+                        <td>3</td>
                         <td>
                           John Richards
                         </td>
@@ -120,11 +122,12 @@
                           July 1, 2015
                         </td>
                           <td>
-                              Single
+                              103
                           </td>
                           <td><label class="badge badge-success">Paid</label></td>
                       </tr>
                       <tr>
+                          <td>4</td>
                         <td>
                           Peter Meggik
                         </td>
@@ -143,12 +146,12 @@
                           July 1, 2015
                         </td>
                           <td>
-                              Double
+                              102
                           </td>
                           <td><label class="badge badge-warning">UnPaid</label></td>
                       </tr>
                       <tr>
-                        
+                        <td>5</td>
                         <td>
                           Edward
                         </td>
@@ -167,12 +170,12 @@
                           July 1, 2015
                         </td>
                           <td>
-                              Single
+                              101
                           </td>
                           <td><label class="badge badge-success">Paid</label></td>
                       </tr>
                       <tr>
-                        
+                        <td>6</td>
                         <td>
                           John Doe
                         </td>
@@ -196,7 +199,7 @@
                           <td><label class="badge badge-success">Paid</label></td>
                       </tr>
                       <tr>
-                        
+                        <td>7</td>
                         <td>
                           Henry Tom
                         </td>
@@ -215,7 +218,7 @@
                           July 1, 2015
                         </td>
                           <td>
-                              Single
+                              101
                           </td>
                           <td><label class="badge badge-warning">UnPaid</label></td>
                       </tr>

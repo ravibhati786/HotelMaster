@@ -236,6 +236,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="addbooking.aspx">New Booking</a></li>
                 <li class="nav-item"> <a class="nav-link" href="viewbooking.aspx">View Booking</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewroombookingdetails.aspx">View Room Booking Details</a></li>
                   
               </ul>
             </div>
