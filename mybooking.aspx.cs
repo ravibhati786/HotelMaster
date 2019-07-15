@@ -67,11 +67,13 @@ public partial class Default2 : System.Web.UI.Page
         param[11] = new SqlParameter("@book_date", SqlDbType.Date);
         param[11].Value = System.DateTime.Now.Date;
 
-        int result = objdf.ExecuteQuery(param, "usp_BookRoom");
+        DataSet ds = new DataSet();
+        ds = objdf.FillDS("usp_BookRoom", param);
 
-        if(result > 0)
+        if(ds.Tables[0].Rows.Count >0)
         {
             Response.Write("<script> alert('Your Room is Booked.') </script>");
+            Response.Redirect("Details.aspx?bookId="+ds.Tables[0].Rows[0]["roomBillId"]);
         }
 
     }
